@@ -233,7 +233,7 @@ class Mission
 		windForced=1;
 		year=2035;
 		month=6;
-		day=24;
+		day=8;
 		hour=2;
 		minute=-15;
 		startFogDecay=0.014;
