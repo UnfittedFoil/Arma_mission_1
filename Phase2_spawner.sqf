@@ -12,7 +12,11 @@ systemChat "Trigger Activated"; //DEBUG. Allows for the confirmation of the acti
 
 //Parameters. All units will be spawned. The spawnpoints will cycle if shorter then number of units.
 _spawnPoints = ["spawn_marker_0"];
-_spawnableUnits = ["I_C_Soldier_Bandit_4_F"];
+_spawnableSquadLeads= ["I_C_Soldier_Bandit_6_F", 1]
+_spawnableUnits = [
+					"I_C_Soldier_Bandit_4_F", .50,	//Rifleman
+					"I_C_Soldier_Bandit_7_F", .50	//Rifleman
+					];
 
 
 //Derived parameteres
