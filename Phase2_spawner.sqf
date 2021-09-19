@@ -50,8 +50,8 @@ _spawnPointsLength = count _spawnPoints;
 
 
 //INPROGRESS: Creates groups of enemies at designated spawn points
-//CURRENT: Edit clothes to add variety to hostiles
-//TODO: Send group to hunt players
+//CURRENT: Send group to hunt players
+//TODO: Funcionize it.
 
 _group = createGroup [independent, true];
 
@@ -64,6 +64,14 @@ for "_i" from 2 to _totalUnits do{
 	
 	_enemy forceAddUniform selectRandomWeighted _uniforms; //##Changes uniform.
 };
+
+_wp = _group addWaypoint [position player, 50];
+_wp setWaypointType "SAD";
+
+_wp = _group addWaypoint [getMarkerPos _wp, 500];
+_wp setWayPointType "SCRIPTED";
+_wp setWaypointScript "\z\lambs\addons\wp\scripts\fnc_wpHunt.sqf";
+
 
 
 
