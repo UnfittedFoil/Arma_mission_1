@@ -23,7 +23,7 @@ systemChat "Trigger Activated"; 	//DEBUG. Allows for the confirmation of the act
  *   _totalUnitsPerGroup: Total number of units a squad should posses
  *   _spawnableUnits: Array of paired units and weights that can be spawned in the squad
  *   _marker: Marker defining where to spawn the units
- *   _uniforms: Special for variation. Set of uniforms that units can be spawned with.
+ *   _uniforms: Set of alternate uniforms that units can be spawned with. Can be Nil
  *
  * Varibles set...
  *   _group(Returned): group that has been defined
@@ -122,8 +122,7 @@ _spawnPoints = [
 				"spawn_marker_2_0",
 				"spawn_marker_2_1",
 				"spawn_marker_2_2",
-				"spawn_marker_2_3",
-				"spawn_marker_2_4"
+				"spawn_marker_2_3"
 				];
 _totalUnitsPerGroup = 6;	
 _spawnableSquadLeads= ["I_C_Soldier_Bandit_6_F", 1];	//UGL
@@ -150,8 +149,7 @@ for "_i" from 0 to count _spawnPoints-1 do{
 _spawnPoints = [
 				"spawn_marker_3_0",
 				"spawn_marker_3_1",
-				"spawn_marker_3_2",
-				"spawn_marker_3_3"
+				"spawn_marker_3_2"
 				];
 _totalUnitsPerGroup = 8;	
 _spawnableSquadLeads= ["I_C_Soldier_Para_4_F", 1];	//Machine Gunner

@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={16728.896,745.29724,12095.216};
-		dir[]={-0.054992851,-0.87741035,0.47657833};
-		up[]={-0.10057788,0.47974056,0.87162668};
-		aside[]={0.9934082,0,0.11463037};
+		pos[]={16594.713,56.326126,12402.916};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -164,7 +164,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=43;
+		items=41;
 		class Item0
 		{
 			dataType="Group";
@@ -2355,10 +2355,11 @@ class Mission
 		class Item34
 		{
 			dataType="Marker";
-			position[]={16651.201,2.5098803,12286.4};
+			position[]={16651.201,2.5098801,12286.4};
 			name="spawn_marker_2_0";
 			type="Empty";
 			id=355;
+			atlOffset=-2.3841858e-007;
 		};
 		class Item35
 		{
@@ -2380,20 +2381,12 @@ class Mission
 		class Item37
 		{
 			dataType="Marker";
-			position[]={17160,16.657198,13083.2};
-			name="spawn_marker_2_4";
-			type="Empty";
-			id=358;
-		};
-		class Item38
-		{
-			dataType="Marker";
-			position[]={17204.801,16.623058,12848};
+			position[]={17160,16.644394,13086.4};
 			name="spawn_marker_2_3";
 			type="Empty";
 			id=359;
 		};
-		class Item39
+		class Item38
 		{
 			dataType="Marker";
 			position[]={16936.305,14.203,12153.61};
@@ -2402,7 +2395,7 @@ class Mission
 			id=369;
 			atlOffset=-0.00029373169;
 		};
-		class Item40
+		class Item39
 		{
 			dataType="Marker";
 			position[]={17304,16.747318,12531.2};
@@ -2410,23 +2403,13 @@ class Mission
 			type="Empty";
 			id=370;
 		};
-		class Item41
+		class Item40
 		{
 			dataType="Marker";
-			position[]={17486.4,16.763,13011.2};
+			position[]={17316.801,15.214656,13169.601};
 			name="spawn_marker_3_2";
 			type="Empty";
 			id=372;
-			atlOffset=-0.00025367737;
-		};
-		class Item42
-		{
-			dataType="Marker";
-			position[]={17266.332,13.613,13262.426};
-			name="spawn_marker_3_3";
-			type="Empty";
-			id=373;
-			atlOffset=-0.00039577484;
 		};
 	};
 };
