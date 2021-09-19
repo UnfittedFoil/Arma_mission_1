@@ -1,4 +1,3 @@
-
 /*
  * Author: UnfittedFoil
  * Description: Allows enemies for Phase 2 of a mission to begin spawning upon a trigger being activated.
@@ -8,6 +7,7 @@
 
 if !(isServer) exitWith {};		//Runs only once, and only on the server
 systemChat "Trigger Activated"; 	//DEBUG. Allows for the confirmation of the activation of the trigger
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -30,7 +30,7 @@ systemChat "Trigger Activated"; 	//DEBUG. Allows for the confirmation of the act
  */
  
 _spawnGroup = {
-	//initialize basic group
+	//initialize basic group (v09.26.21)
 	_group = createGroup [independent, true];
 	private _enemy = _group createUnit [selectRandomWeighted _spawnableSquadLeads, getMarkerPos _marker, [], 5, "NONE"];
 	if !(isNil "_uniforms") then{
@@ -61,6 +61,7 @@ _spawnGroup = {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
  * Wave 1
+ * Light quick reacting wave
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //Parameters.
@@ -71,13 +72,14 @@ _spawnPoints = [
 				"spawn_marker_1_3",
 				"spawn_marker_1_4"
 				];
+_side = independent;
 _totalUnitsPerGroup = 4;	
-_spawnableSquadLeads= ["I_C_Soldier_Bandit_6_F", 1];
+_spawnableSquadLeads= ["I_C_Soldier_Bandit_6_F", 1];	////UGL
 _spawnableUnits = [
 					"I_C_Soldier_Bandit_4_F", .50,	//Rifleman
 					"I_C_Soldier_Bandit_7_F", .50	//Rifleman
 					];
-_uniforms = [
+_uniforms = [	//Assortment of civilian like uniforms
 				"U_I_C_Soldier_Bandit_1_F", 1,
 				"U_I_C_Soldier_Bandit_2_F", 1, 
 				"U_I_C_Soldier_Bandit_3_F", 1, 
@@ -112,6 +114,7 @@ for "_i" from 0 to count _spawnPoints-1 do{
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
  * Wave 2
+ * Moderate testing force
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //Parameters.
@@ -123,16 +126,47 @@ _spawnPoints = [
 				"spawn_marker_2_4"
 				];
 _totalUnitsPerGroup = 6;	
-_spawnableSquadLeads= ["I_C_Soldier_Bandit_6_F", 1];
+_spawnableSquadLeads= ["I_C_Soldier_Bandit_6_F", 1];	//UGL
 _spawnableUnits = [
 					"I_C_Soldier_Bandit_1_F", .15,	//Medic
 					"I_C_Soldier_Bandit_2_F", .20,	//Launcher
 					"I_C_Soldier_Bandit_4_F", .30,	//Rifleman
 					"I_C_Soldier_Bandit_7_F", .35	//Rifleman
 					];
-
 //Wave 2 spawn
-sleep 480;
+sleep 480;		//8 minutes since the start
+for "_i" from 0 to count _spawnPoints-1 do{
+	_marker = _spawnPoints select _i;
+	call _spawnGroup;
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+ * Wave 3
+ * Scary heavily armed counter
+*/
+////////////////////////////////////////////////////////////////////////////////////////////////////
+//Parameters.
+_spawnPoints = [
+				"spawn_marker_3_0",
+				"spawn_marker_3_1",
+				"spawn_marker_3_2",
+				"spawn_marker_3_3"
+				];
+_totalUnitsPerGroup = 8;	
+_spawnableSquadLeads= ["I_C_Soldier_Para_4_F", 1];	//Machine Gunner
+_spawnableUnits = [
+					"I_C_Soldier_Para_1_F", .10,	//Rifleman
+					"I_C_Soldier_Para_2_F", .10,	//Rifleman
+					"I_C_Soldier_Para_3_F", .15,	//Medic
+					"I_C_Soldier_Para_4_F", .10,	//Machine Gunner
+					"I_C_Soldier_Para_5_F", .20,	//Launcher
+					"I_C_Soldier_Para_6_F", .25,	//UGL
+					"I_C_Soldier_Para_7_F", .10		//Rifleman
+					];
+_uniforms = nil;
+//Wave 3 spawn
+sleep 660;		//11 minutes from previous, 19 minutes from start
 for "_i" from 0 to count _spawnPoints-1 do{
 	_marker = _spawnPoints select _i;
 	call _spawnGroup;
