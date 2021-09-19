@@ -11,7 +11,13 @@ systemChat "Trigger Activated 2"; 	//DEBUG. Allows for the confirmation of the a
 
 
 //Parameters. All units will be spawned. The spawnpoints will cycle if shorter then number of units.
-_spawnPoints = ["spawn_marker_0"];
+_spawnPoints = [
+				"spawn_marker_0",
+				"spawn_marker_1",
+				"spawn_marker_2",
+				"spawn_marker_3",
+				"spawn_marker_4"
+				];
 _spawnableSquadLeads= ["I_C_Soldier_Bandit_6_F", 1];
 _spawnableUnits = [
 					"I_C_Soldier_Bandit_4_F", .50,	//Rifleman
@@ -49,31 +55,32 @@ _totalUnits = 4;
 _spawnPointsLength = count _spawnPoints;
 
 
-//INPROGRESS: Creates groups of enemies at designated spawn points
-//CURRENT: Send group to hunt players
-//TODO: Funcionize it.
-
-_group = createGroup [independent, true];
-
-_marker = _spawnPoints select 0;
-_enemy = _group createUnit [selectRandomWeighted _spawnableSquadLeads, getMarkerPos _marker, [], 5, "NONE"];
-_enemy forceAddUniform selectRandomWeighted _uniforms; //##Changes uniform.
-
-for "_i" from 2 to _totalUnits do{
-	_enemy = _group createUnit [selectRandomWeighted _spawnableUnits, getMarkerPos _marker, [], 5, "NONE"];
-	
+//Creates groups of enemies at designated spawn points
+_spawnGroup = {
+	//initialize basic group
+	_group = createGroup [independent, true];
+	_enemy = _group createUnit [selectRandomWeighted _spawnableSquadLeads, getMarkerPos _marker, [], 5, "NONE"];
 	_enemy forceAddUniform selectRandomWeighted _uniforms; //##Changes uniform.
+	
+	//Add units to group
+	for "_i" from 2 to _totalUnits do{
+		_enemy = _group createUnit [selectRandomWeighted _spawnableUnits, getMarkerPos _marker, [], 5, "NONE"];
+		_enemy forceAddUniform selectRandomWeighted _uniforms; //##Changes uniform.
+	};
+	
+	//Set AI Tasks
+		//Set start tasks(Rush towards players)
+	_wp = _group addWaypoint [position player, 50];
+	_wp setWaypointType "SAD";
+		//Set final task (Search for players)
+	_wp = _group addWaypoint [getMarkerPos _wp, 500];
+	_wp setWayPointType "SCRIPTED";
+	_wp setWaypointScript "\z\lambs\addons\wp\scripts\fnc_wpHunt.sqf";
+
 };
 
-_wp = _group addWaypoint [position player, 50];
-_wp setWaypointType "SAD";
-
-_wp = _group addWaypoint [getMarkerPos _wp, 500];
-_wp setWayPointType "SCRIPTED";
-_wp setWaypointScript "\z\lambs\addons\wp\scripts\fnc_wpHunt.sqf";
-
-
-
-
-
-
+//Wave 1 spawn
+for "_i" from 0 to count _spawnPoints-1 do{
+	_marker = _spawnPoints select _i;
+	call _spawnGroup;
+}

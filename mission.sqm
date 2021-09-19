@@ -8,22 +8,22 @@ class EditorData
 	toggles=5;
 	class ItemIDProvider
 	{
-		nextID=351;
+		nextID=355;
 	};
 	class MarkerIDProvider
 	{
-		nextID=7;
+		nextID=11;
 	};
 	class LayerIndexProvider
 	{
-		nextID=51;
+		nextID=54;
 	};
 	class Camera
 	{
-		pos[]={16674.285,124.35762,12671.425};
-		dir[]={-0.5255999,-0.5766477,0.62547767};
-		up[]={-0.37097749,0.81699294,0.44147292};
-		aside[]={0.76558518,1.4901161e-008,0.64333475};
+		pos[]={16708.764,89.64357,12414.507};
+		dir[]={-0.62419468,-0.50187641,0.59877163};
+		up[]={-0.36218452,0.86493069,0.34743217};
+		aside[]={0.69226414,1.1196425e-007,0.72165924};
 	};
 };
 binarizationWanted=0;
@@ -36,19 +36,19 @@ addons[]=
 	"A3_Modules_F_Curator_Curator",
 	"A3_Modules_F",
 	"A3_Characters_F_Exp",
-	"A3_Weapons_F_Exp_Rifles_AK12",
-	"ace_realisticnames",
-	"A3_Weapons_F_Acc",
-	"A3_Weapons_F_Exp",
+	"rhs_c_weapons",
 	"A3_Weapons_F",
+	"ace_realisticnames",
 	"A3_Weapons_F_Items",
 	"ace_medical_engine",
 	"ace_medical_treatment",
-	"rhs_c_weapons",
 	"A3_Weapons_F_Exp_Machineguns_LMG_03",
+	"A3_Weapons_F_Acc",
+	"A3_Weapons_F_Exp",
 	"ace_reload",
 	"ace_ballistics",
 	"A3_Weapons_F_Exp_Pistols_Pistol_01",
+	"A3_Weapons_F_Exp_Rifles_AK12",
 	"A3_Weapons_F_Exp_Rifles_AKS",
 	"A3_Weapons_F_Exp_Launchers_RPG7",
 	"cba_jam",
@@ -109,10 +109,10 @@ class AddonsMetaData
 		};
 		class Item6
 		{
-			className="A3_Weapons_F_Exp";
-			name="Arma 3 Apex - Weapons and Accessories";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
+			className="rhs_c_weapons";
+			name="AFRF Weapons Pack";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
 		};
 		class Item7
 		{
@@ -137,10 +137,10 @@ class AddonsMetaData
 		};
 		class Item10
 		{
-			className="rhs_c_weapons";
-			name="AFRF Weapons Pack";
-			author="Red Hammer Studios";
-			url="http://www.rhsmods.org/";
+			className="A3_Weapons_F_Exp";
+			name="Arma 3 Apex - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 		class Item11
 		{
@@ -262,7 +262,7 @@ class Mission
 		windForced=1;
 		year=2035;
 		month=6;
-		day=20;
+		day=19;
 		hour=2;
 		minute=-15;
 		startFogDecay=0.014;
@@ -270,7 +270,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=33;
+		items=36;
 		class Item0
 		{
 			dataType="Group";
@@ -2234,1080 +2234,6 @@ class Mission
 			atlOffset=1.0018997;
 		};
 		class Item24
-		{
-			dataType="Layer";
-			name="Bandit Shock Team Flashlights";
-			class Entities
-			{
-				items=3;
-				class Item0
-				{
-					dataType="Group";
-					side="Independent";
-					class Entities
-					{
-						items=5;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={16673.6,7.9455147,13049.65};
-							};
-							side="Independent";
-							flags=7;
-							class Attributes
-							{
-								rank="SERGEANT";
-								disableSimulation=1;
-								class Inventory
-								{
-									class primaryWeapon
-									{
-										name="arifle_AK12_GL_F";
-										flashlight="acc_flashlight";
-										class primaryMuzzleMag
-										{
-											name="30Rnd_762x39_AK12_Mag_F";
-											ammoLeft=30;
-										};
-										class secondaryMuzzleMag
-										{
-											name="1Rnd_HE_Grenade_shell";
-											ammoLeft=1;
-										};
-									};
-									class uniform
-									{
-										typeName="U_I_C_Soldier_Bandit_3_F";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="30Rnd_762x39_AK12_Mag_F";
-												count=1;
-												ammoLeft=30;
-											};
-										};
-										class ItemCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="FirstAidKit";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="V_Chestrig_khk";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=2;
-											class Item0
-											{
-												name="30Rnd_762x39_AK12_Mag_F";
-												count=4;
-												ammoLeft=30;
-											};
-											class Item1
-											{
-												name="1Rnd_HE_Grenade_shell";
-												count=5;
-												ammoLeft=1;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-								};
-							};
-							id=201;
-							type="I_C_Soldier_Bandit_6_F";
-							atlOffset=-9.5367432e-007;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="hideObject";
-									expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item1
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={16668.6,8.2965965,13044.65};
-							};
-							side="Independent";
-							flags=5;
-							class Attributes
-							{
-								skill=0.44999999;
-								rank="CORPORAL";
-								disableSimulation=1;
-								class Inventory
-								{
-									class primaryWeapon
-									{
-										name="rhs_weap_ak74n";
-										muzzle="rhs_acc_dtk1983";
-										flashlight="rhs_acc_2dpZenit";
-										class primaryMuzzleMag
-										{
-											name="rhs_30Rnd_545x39_7N6M_AK";
-											ammoLeft=30;
-										};
-									};
-									class uniform
-									{
-										typeName="U_I_C_Soldier_Bandit_1_F";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="rhs_30Rnd_545x39_7N6_AK";
-												count=1;
-												ammoLeft=30;
-											};
-										};
-										class ItemCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="FirstAidKit";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="V_BandollierB_rgr";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=2;
-											class Item0
-											{
-												name="MiniGrenade";
-												count=2;
-												ammoLeft=1;
-											};
-											class Item1
-											{
-												name="rhs_30Rnd_545x39_7N6_AK";
-												count=3;
-												ammoLeft=30;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-								};
-							};
-							id=202;
-							type="I_C_Soldier_Bandit_7_F";
-							atlOffset=-9.5367432e-007;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="hideObject";
-									expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item2
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={16678.43,8.4118862,13043.554};
-							};
-							side="Independent";
-							flags=5;
-							class Attributes
-							{
-								skill=0.44999999;
-								rank="CORPORAL";
-								disableSimulation=1;
-								class Inventory
-								{
-									class primaryWeapon
-									{
-										name="rhs_weap_ak74n";
-										muzzle="rhs_acc_dtk1983";
-										flashlight="rhs_acc_2dpZenit";
-										class primaryMuzzleMag
-										{
-											name="rhs_30Rnd_545x39_7N6M_AK";
-											ammoLeft=30;
-										};
-									};
-									class uniform
-									{
-										typeName="U_I_C_Soldier_Bandit_1_F";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="rhs_30Rnd_545x39_7N6_AK";
-												count=1;
-												ammoLeft=30;
-											};
-										};
-										class ItemCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="FirstAidKit";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="V_BandollierB_rgr";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=2;
-											class Item0
-											{
-												name="MiniGrenade";
-												count=2;
-												ammoLeft=1;
-											};
-											class Item1
-											{
-												name="rhs_30Rnd_545x39_7N6_AK";
-												count=3;
-												ammoLeft=30;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-								};
-							};
-							id=203;
-							type="I_C_Soldier_Bandit_7_F";
-							atlOffset=-9.5367432e-007;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="hideObject";
-									expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item3
-						{
-							dataType="Waypoint";
-							loiterAltitude=-3.4028235e+038;
-							position[]={16623.068,13.500288,12893.904};
-							class Effects
-							{
-							};
-							showWP="NEVER";
-							id=304;
-							type="Move";
-						};
-						class Item4
-						{
-							dataType="Waypoint";
-							loiterAltitude=-3.4028235e+038;
-							position[]={16568.352,11,12781.612};
-							type="lambs_danger_Creep";
-							script="\z\lambs\addons\wp\scripts\fnc_wpCreep.sqf";
-							class Effects
-							{
-							};
-							showWP="NEVER";
-							id=208;
-						};
-					};
-					class Attributes
-					{
-					};
-					id=200;
-					atlOffset=-9.5367432e-007;
-				};
-				class Item1
-				{
-					dataType="Group";
-					side="Independent";
-					class Entities
-					{
-						items=5;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={16854.4,19.901545,12808.05};
-							};
-							side="Independent";
-							flags=7;
-							class Attributes
-							{
-								rank="SERGEANT";
-								disableSimulation=1;
-								class Inventory
-								{
-									class primaryWeapon
-									{
-										name="arifle_AK12_GL_F";
-										flashlight="acc_flashlight";
-										class primaryMuzzleMag
-										{
-											name="30Rnd_762x39_AK12_Mag_F";
-											ammoLeft=30;
-										};
-										class secondaryMuzzleMag
-										{
-											name="1Rnd_HE_Grenade_shell";
-											ammoLeft=1;
-										};
-									};
-									class uniform
-									{
-										typeName="U_I_C_Soldier_Bandit_3_F";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="30Rnd_762x39_AK12_Mag_F";
-												count=1;
-												ammoLeft=30;
-											};
-										};
-										class ItemCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="FirstAidKit";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="V_Chestrig_khk";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=2;
-											class Item0
-											{
-												name="30Rnd_762x39_AK12_Mag_F";
-												count=4;
-												ammoLeft=30;
-											};
-											class Item1
-											{
-												name="1Rnd_HE_Grenade_shell";
-												count=5;
-												ammoLeft=1;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-								};
-							};
-							id=205;
-							type="I_C_Soldier_Bandit_6_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="hideObject";
-									expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item1
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={16849.4,20.149885,12803.05};
-							};
-							side="Independent";
-							flags=5;
-							class Attributes
-							{
-								skill=0.44999999;
-								rank="CORPORAL";
-								disableSimulation=1;
-								class Inventory
-								{
-									class primaryWeapon
-									{
-										name="rhs_weap_ak74n";
-										muzzle="rhs_acc_dtk1983";
-										flashlight="rhs_acc_2dpZenit";
-										class primaryMuzzleMag
-										{
-											name="rhs_30Rnd_545x39_7N6M_AK";
-											ammoLeft=30;
-										};
-									};
-									class uniform
-									{
-										typeName="U_I_C_Soldier_Bandit_1_F";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="rhs_30Rnd_545x39_7N6_AK";
-												count=1;
-												ammoLeft=30;
-											};
-										};
-										class ItemCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="FirstAidKit";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="V_BandollierB_rgr";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=2;
-											class Item0
-											{
-												name="MiniGrenade";
-												count=2;
-												ammoLeft=1;
-											};
-											class Item1
-											{
-												name="rhs_30Rnd_545x39_7N6_AK";
-												count=3;
-												ammoLeft=30;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-								};
-							};
-							id=206;
-							type="I_C_Soldier_Bandit_7_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="hideObject";
-									expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item2
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={16859.23,19.770153,12801.953};
-							};
-							side="Independent";
-							flags=5;
-							class Attributes
-							{
-								skill=0.44999999;
-								rank="CORPORAL";
-								disableSimulation=1;
-								class Inventory
-								{
-									class primaryWeapon
-									{
-										name="rhs_weap_ak74n";
-										muzzle="rhs_acc_dtk1983";
-										flashlight="rhs_acc_2dpZenit";
-										class primaryMuzzleMag
-										{
-											name="rhs_30Rnd_545x39_7N6M_AK";
-											ammoLeft=30;
-										};
-									};
-									class uniform
-									{
-										typeName="U_I_C_Soldier_Bandit_1_F";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="rhs_30Rnd_545x39_7N6_AK";
-												count=1;
-												ammoLeft=30;
-											};
-										};
-										class ItemCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="FirstAidKit";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="V_BandollierB_rgr";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=2;
-											class Item0
-											{
-												name="MiniGrenade";
-												count=2;
-												ammoLeft=1;
-											};
-											class Item1
-											{
-												name="rhs_30Rnd_545x39_7N6_AK";
-												count=3;
-												ammoLeft=30;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-								};
-							};
-							id=207;
-							type="I_C_Soldier_Bandit_7_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="hideObject";
-									expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item3
-						{
-							dataType="Waypoint";
-							loiterAltitude=-3.4028235e+038;
-							position[]={16725.037,19.442976,12795.136};
-							class Effects
-							{
-							};
-							showWP="NEVER";
-							id=305;
-							type="Move";
-						};
-						class Item4
-						{
-							dataType="Waypoint";
-							loiterAltitude=-3.4028235e+038;
-							position[]={16568.352,11,12781.612};
-							type="lambs_danger_Creep";
-							script="\z\lambs\addons\wp\scripts\fnc_wpCreep.sqf";
-							class Effects
-							{
-							};
-							showWP="NEVER";
-							id=211;
-						};
-					};
-					class Attributes
-					{
-					};
-					id=204;
-				};
-				class Item2
-				{
-					dataType="Group";
-					side="Independent";
-					class Entities
-					{
-						items=5;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={16540.086,2.2714388,12541.619};
-							};
-							side="Independent";
-							flags=7;
-							class Attributes
-							{
-								rank="SERGEANT";
-								disableSimulation=1;
-								class Inventory
-								{
-									class primaryWeapon
-									{
-										name="arifle_AK12_GL_F";
-										flashlight="acc_flashlight";
-										class primaryMuzzleMag
-										{
-											name="30Rnd_762x39_AK12_Mag_F";
-											ammoLeft=30;
-										};
-										class secondaryMuzzleMag
-										{
-											name="1Rnd_HE_Grenade_shell";
-											ammoLeft=1;
-										};
-									};
-									class uniform
-									{
-										typeName="U_I_C_Soldier_Bandit_3_F";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="30Rnd_762x39_AK12_Mag_F";
-												count=1;
-												ammoLeft=30;
-											};
-										};
-										class ItemCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="FirstAidKit";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="V_Chestrig_khk";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=2;
-											class Item0
-											{
-												name="30Rnd_762x39_AK12_Mag_F";
-												count=4;
-												ammoLeft=30;
-											};
-											class Item1
-											{
-												name="1Rnd_HE_Grenade_shell";
-												count=5;
-												ammoLeft=1;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-								};
-							};
-							id=326;
-							type="I_C_Soldier_Bandit_6_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="hideObject";
-									expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item1
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={16535.086,2.2714388,12536.619};
-							};
-							side="Independent";
-							flags=5;
-							class Attributes
-							{
-								skill=0.44999999;
-								rank="CORPORAL";
-								disableSimulation=1;
-								class Inventory
-								{
-									class primaryWeapon
-									{
-										name="rhs_weap_ak74n";
-										muzzle="rhs_acc_dtk1983";
-										flashlight="rhs_acc_2dpZenit";
-										class primaryMuzzleMag
-										{
-											name="rhs_30Rnd_545x39_7N6M_AK";
-											ammoLeft=30;
-										};
-									};
-									class uniform
-									{
-										typeName="U_I_C_Soldier_Bandit_1_F";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="rhs_30Rnd_545x39_7N6_AK";
-												count=1;
-												ammoLeft=30;
-											};
-										};
-										class ItemCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="FirstAidKit";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="V_BandollierB_rgr";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=2;
-											class Item0
-											{
-												name="MiniGrenade";
-												count=2;
-												ammoLeft=1;
-											};
-											class Item1
-											{
-												name="rhs_30Rnd_545x39_7N6_AK";
-												count=3;
-												ammoLeft=30;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-								};
-							};
-							id=327;
-							type="I_C_Soldier_Bandit_7_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="hideObject";
-									expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item2
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={16544.916,2.2714388,12535.522};
-							};
-							side="Independent";
-							flags=5;
-							class Attributes
-							{
-								skill=0.44999999;
-								rank="CORPORAL";
-								disableSimulation=1;
-								class Inventory
-								{
-									class primaryWeapon
-									{
-										name="rhs_weap_ak74n";
-										muzzle="rhs_acc_dtk1983";
-										flashlight="rhs_acc_2dpZenit";
-										class primaryMuzzleMag
-										{
-											name="rhs_30Rnd_545x39_7N6M_AK";
-											ammoLeft=30;
-										};
-									};
-									class uniform
-									{
-										typeName="U_I_C_Soldier_Bandit_1_F";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="rhs_30Rnd_545x39_7N6_AK";
-												count=1;
-												ammoLeft=30;
-											};
-										};
-										class ItemCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="FirstAidKit";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="V_BandollierB_rgr";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=2;
-											class Item0
-											{
-												name="MiniGrenade";
-												count=2;
-												ammoLeft=1;
-											};
-											class Item1
-											{
-												name="rhs_30Rnd_545x39_7N6_AK";
-												count=3;
-												ammoLeft=30;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-								};
-							};
-							id=328;
-							type="I_C_Soldier_Bandit_7_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="hideObject";
-									expression="if !(is3DEN) then {_this hideobjectglobal _value;};";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item3
-						{
-							dataType="Waypoint";
-							loiterAltitude=-3.4028235e+038;
-							position[]={16552,10.974515,12662.4};
-							class Effects
-							{
-							};
-							showWP="NEVER";
-							id=330;
-							type="Move";
-						};
-						class Item4
-						{
-							dataType="Waypoint";
-							loiterAltitude=-3.4028235e+038;
-							position[]={16568.402,11,12780.813};
-							type="lambs_danger_Creep";
-							script="\z\lambs\addons\wp\scripts\fnc_wpCreep.sqf";
-							class Effects
-							{
-							};
-							showWP="NEVER";
-							id=331;
-						};
-					};
-					class Attributes
-					{
-					};
-					id=325;
-				};
-			};
-			id=194;
-			atlOffset=-4.9198771;
-		};
-		class Item25
 		{
 			dataType="Layer";
 			name="Bandit Combat Group Flashlights";
@@ -6671,7 +5597,7 @@ class Mission
 			id=220;
 			atlOffset=-3.3490095;
 		};
-		class Item26
+		class Item25
 		{
 			dataType="Layer";
 			name="Paramilitary Fire Team Flashlights";
@@ -8210,7 +7136,7 @@ class Mission
 			id=273;
 			atlOffset=-8.1756401;
 		};
-		class Item27
+		class Item26
 		{
 			dataType="Object";
 			class PositionInfo
@@ -8227,7 +7153,7 @@ class Mission
 			type="C_Offroad_02_unarmed_F";
 			atlOffset=-0.0015954971;
 		};
-		class Item28
+		class Item27
 		{
 			dataType="Object";
 			class PositionInfo
@@ -8243,7 +7169,7 @@ class Mission
 			id=311;
 			type="C_Offroad_02_unarmed_F";
 		};
-		class Item29
+		class Item28
 		{
 			dataType="Object";
 			class PositionInfo
@@ -8260,15 +7186,15 @@ class Mission
 			type="C_Offroad_02_unarmed_F";
 			atlOffset=-0.0054368973;
 		};
-		class Item30
+		class Item29
 		{
 			dataType="Marker";
-			position[]={16521.6,2.27,12561.601};
+			position[]={16592,3.0340137,12449.601};
 			name="spawn_marker_0";
 			type="Empty";
 			id=344;
 		};
-		class Item31
+		class Item30
 		{
 			dataType="Group";
 			side="Civilian";
@@ -8340,7 +7266,7 @@ class Mission
 			id=345;
 			atlOffset=0.00012207031;
 		};
-		class Item32
+		class Item31
 		{
 			dataType="Group";
 			side="East";
@@ -8410,6 +7336,42 @@ class Mission
 			{
 			};
 			id=349;
+		};
+		class Item32
+		{
+			dataType="Marker";
+			position[]={16855.939,20,12572.963};
+			name="spawn_marker_1";
+			type="Empty";
+			id=351;
+			atlOffset=-0.00017929077;
+		};
+		class Item33
+		{
+			dataType="Marker";
+			position[]={16948.801,16.899,12723.2};
+			name="spawn_marker_2";
+			type="Empty";
+			id=352;
+			atlOffset=-0.00043869019;
+		};
+		class Item34
+		{
+			dataType="Marker";
+			position[]={16996.801,14.964,12892.8};
+			name="spawn_marker_3";
+			type="Empty";
+			id=353;
+			atlOffset=-1.3187456;
+		};
+		class Item35
+		{
+			dataType="Marker";
+			position[]={16776,5.7940001,13156.8};
+			name="spawn_marker_4";
+			type="Empty";
+			id=354;
+			atlOffset=-0.00036382675;
 		};
 	};
 };
