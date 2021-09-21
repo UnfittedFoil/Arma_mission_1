@@ -8,7 +8,7 @@ class EditorData
 	toggles=517;
 	class ItemIDProvider
 	{
-		nextID=400;
+		nextID=403;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={16445.205,1125.5748,10079.006};
-		dir[]={0.0052972068,-0.99994999,0.0084818834};
-		up[]={0.52968693,0.010001522,0.84813434};
-		aside[]={0.84817672,0,-0.52971345};
+		pos[]={16420.023,58.152294,9959.9961};
+		dir[]={0.65331173,-0.40292978,0.64096123};
+		up[]={0.28762007,0.91523087,0.28218275};
+		aside[]={0.70032734,0,-0.71382177};
 	};
 };
 binarizationWanted=0;
@@ -33,38 +33,30 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Characters_F_Tank",
 	"A3_Modules_F_Tacops",
+	"hlcweapons_ar15",
+	"A3_Weapons_F_Acc",
+	"ace_realisticnames",
+	"ace_scopes",
+	"A3_Weapons_F",
+	"ace_nightvision",
 	"A3_Modules_F_Curator_Curator",
 	"A3_Modules_F",
 	"A3_Soft_F_Exp_Offroad_02",
 	"A3_Ui_F",
-	"A3_Weapons_F_Rifles_Khaybar",
-	"A3_Weapons_F_Acc",
-	"ace_realisticnames",
-	"ace_scopes",
-	"ace_laserpointer",
-	"A3_Weapons_F",
-	"ace_smallarms",
-	"ace_ballistics",
-	"A3_Weapons_F_Pistols_Rook40",
-	"ace_nightvision",
-	"ace_hearing",
-	"A3_Weapons_F_Items",
-	"ace_medical_engine",
-	"ace_medical_treatment",
-	"ace_attach",
-	"ace_chemlights",
-	"cba_jam",
-	"A3_Weapons_F_Mark",
 	"A3_Boat_F_Boat_Transport_01",
 	"A3_Soft_F_Beta_Truck_02",
 	"A3_Modules_F_Intel",
-	"A3_Weapons_F_Ammoboxes"
+	"A3_Weapons_F_Ammoboxes",
+	"A3_Structures_F_EPA_Civ_Constructions",
+	"ace_interaction",
+	"ace_cargo",
+	"ace_dragging"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=22;
+		items=17;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -88,141 +80,106 @@ class AddonsMetaData
 		};
 		class Item3
 		{
-			className="A3_Modules_F_Curator";
-			name="Arma 3 Zeus Update - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
+			className="hlcweapons_ar15";
+			name="hlcweapons_ar15";
+			author="toadie";
 		};
 		class Item4
-		{
-			className="A3_Modules_F";
-			name="Arma 3 Alpha - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item5
-		{
-			className="A3_Soft_F_Exp";
-			name="Arma 3 Apex - Unarmored Land Vehicles";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item6
-		{
-			className="A3_Ui_F";
-			name="Arma 3 - User Interface";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item7
 		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item8
+		class Item5
 		{
 			className="ace_scopes";
 			name="ACE3 - Scopes";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item9
-		{
-			className="ace_laserpointer";
-			name="ACE3 - Laser Pointer";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item10
-		{
-			className="ace_smallarms";
-			name="ACE3 - Small Arms";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item11
-		{
-			className="ace_ballistics";
-			name="ACE3 - Ballistics";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item12
+		class Item6
 		{
 			className="ace_nightvision";
 			name="ACE3 - Night Vision";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item13
+		class Item7
 		{
-			className="ace_hearing";
-			name="ACE3 - Hearing";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item14
-		{
-			className="ace_medical_engine";
-			name="ACE3 - Medical Engine";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item15
-		{
-			className="ace_medical_treatment";
-			name="ACE3 - Medical Treatment";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item16
-		{
-			className="ace_attach";
-			name="ACE3 - Attach";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item17
-		{
-			className="ace_chemlights";
-			name="ace_chemlights";
-			author="ACE-Team";
-			url="http://ace3mod.com/";
-		};
-		class Item18
-		{
-			className="cba_jam";
-			name="Community Base Addons - Joint Ammo Magazines";
-			author="CBA Team";
-			url="https://www.github.com/CBATeam/CBA_A3";
-		};
-		class Item19
-		{
-			className="A3_Weapons_F_Mark";
-			name="Arma 3 Marksmen - Weapons and Accessories";
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item20
+		class Item8
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item9
+		{
+			className="A3_Soft_F_Exp";
+			name="Arma 3 Apex - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item10
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item11
 		{
 			className="A3_Boat_F";
 			name="Arma 3 Alpha - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item21
+		class Item12
 		{
 			className="A3_Soft_F_Beta";
 			name="Arma 3 Beta - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item13
+		{
+			className="A3_Structures_F_EPA";
+			name="Arma 3 Survive Episode - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item14
+		{
+			className="ace_interaction";
+			name="ACE3 - Interaction";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item15
+		{
+			className="ace_cargo";
+			name="ACE3 - Cargo";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
+		class Item16
+		{
+			className="ace_dragging";
+			name="ACE3 - Dragging";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
+		};
 	};
 };
 dlcs[]=
 {
+	"Niarms_AR15",
 	"Expansion"
 };
 randomSeed=3136377;
@@ -240,7 +197,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category0
+	class Category1
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -263,7 +220,7 @@ class CustomAttributes
 		};
 		nAttributes=1;
 	};
-	class Category1
+	class Category2
 	{
 		name="Scenario";
 		class Attribute0
@@ -1984,12 +1941,32 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={16493.963,13.557683,10024.09};
+						position[]={16475.201,12.619919,9996.8496};
 					};
 					side="East";
 					flags=7;
 					class Attributes
 					{
+						isPlayer=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="hlc_rifle_honeybadger";
+								optics="optic_Holosight";
+								class primaryMuzzleMag
+								{
+									name="29rnd_300BLK_STANAG";
+									ammoLeft=30;
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							hmd="NVGoggles_OPFOR";
+							headgear="H_HelmetCrew_O";
+						};
 					};
 					id=129;
 					type="O_crew_F";
@@ -2047,7 +2024,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={16496.527,13.612923,10026.352};
+				position[]={16494.4,13.980765,10030.4};
+				angles[]={6.1993828,0,6.2658529};
 			};
 			id=130;
 			type="ModuleCurator_F";
@@ -2269,17 +2247,354 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={16476.764,13.996331,9987.1357};
-				angles[]={6.2491498,2.8758032,0.010286722};
+				position[]={16475.213,14.125659,9991.9453};
+				angles[]={6.2738566,2.8758032,6.2751846};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				textures="Black";
 			};
 			id=307;
 			type="C_Offroad_02_unarmed_F";
-			atlOffset=-0.0008764267;
+			atlOffset=-0.00049686432;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="VehicleCustomization";
+					expression="if (local _this) then {if (isSimpleObject _this) then {_this setVariable ['bis_fnc_initVehicle_customization',_value]} else {([_this] + _value + [true]) call (uinamespace getvariable 'bis_fnc_initVehicle');};};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"ARRAY"
+								};
+							};
+							class value
+							{
+								items=2;
+								class Item0
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"ARRAY"
+											};
+										};
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"ARRAY"
+											};
+										};
+										class value
+										{
+											items=20;
+											class Item0
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideLeftDoor";
+												};
+											};
+											class Item1
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item2
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideRightDoor";
+												};
+											};
+											class Item3
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item4
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideRearDoor";
+												};
+											};
+											class Item5
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item6
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideBullbar";
+												};
+											};
+											class Item7
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item8
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideFenders";
+												};
+											};
+											class Item9
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1;
+												};
+											};
+											class Item10
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideHeadSupportRear";
+												};
+											};
+											class Item11
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item12
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideHeadSupportFront";
+												};
+											};
+											class Item13
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item14
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideRollcage";
+												};
+											};
+											class Item15
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1;
+												};
+											};
+											class Item16
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideSeatsRear";
+												};
+											};
+											class Item17
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item18
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideSpareWheel";
+												};
+											};
+											class Item19
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1;
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item25
 		{
@@ -2293,9 +2608,346 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				textures="Green";
 			};
 			id=311;
 			type="C_Offroad_02_unarmed_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="VehicleCustomization";
+					expression="if (local _this) then {if (isSimpleObject _this) then {_this setVariable ['bis_fnc_initVehicle_customization',_value]} else {([_this] + _value + [true]) call (uinamespace getvariable 'bis_fnc_initVehicle');};};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"ARRAY"
+								};
+							};
+							class value
+							{
+								items=2;
+								class Item0
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"ARRAY"
+											};
+										};
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"ARRAY"
+											};
+										};
+										class value
+										{
+											items=20;
+											class Item0
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideLeftDoor";
+												};
+											};
+											class Item1
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item2
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideRightDoor";
+												};
+											};
+											class Item3
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item4
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideRearDoor";
+												};
+											};
+											class Item5
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item6
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideBullbar";
+												};
+											};
+											class Item7
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item8
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideFenders";
+												};
+											};
+											class Item9
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item10
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideHeadSupportRear";
+												};
+											};
+											class Item11
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item12
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideHeadSupportFront";
+												};
+											};
+											class Item13
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item14
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideRollcage";
+												};
+											};
+											class Item15
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1;
+												};
+											};
+											class Item16
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideSeatsRear";
+												};
+											};
+											class Item17
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item18
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideSpareWheel";
+												};
+											};
+											class Item19
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1;
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item26
 		{
@@ -2309,10 +2961,347 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				textures="Blue";
 			};
 			id=314;
 			type="C_Offroad_02_unarmed_F";
 			atlOffset=-0.0054368973;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="VehicleCustomization";
+					expression="if (local _this) then {if (isSimpleObject _this) then {_this setVariable ['bis_fnc_initVehicle_customization',_value]} else {([_this] + _value + [true]) call (uinamespace getvariable 'bis_fnc_initVehicle');};};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"ARRAY"
+								};
+							};
+							class value
+							{
+								items=2;
+								class Item0
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"ARRAY"
+											};
+										};
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"ARRAY"
+											};
+										};
+										class value
+										{
+											items=20;
+											class Item0
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideLeftDoor";
+												};
+											};
+											class Item1
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item2
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideRightDoor";
+												};
+											};
+											class Item3
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item4
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideRearDoor";
+												};
+											};
+											class Item5
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item6
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideBullbar";
+												};
+											};
+											class Item7
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item8
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideFenders";
+												};
+											};
+											class Item9
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item10
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideHeadSupportRear";
+												};
+											};
+											class Item11
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item12
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideHeadSupportFront";
+												};
+											};
+											class Item13
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item14
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideRollcage";
+												};
+											};
+											class Item15
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item16
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideSeatsRear";
+												};
+											};
+											class Item17
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item18
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="hideSpareWheel";
+												};
+											};
+											class Item19
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1;
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item27
 		{
@@ -2324,243 +3313,6 @@ class Mission
 		};
 		class Item28
 		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={17276.801,28.801439,12425.65};
-					};
-					side="East";
-					flags=3;
-					class Attributes
-					{
-						isPlayer=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_Katiba_ACO_pointer_F";
-								optics="optic_DMS";
-								flashlight="acc_pointer_IR";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_green";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Rook40_F";
-								class primaryMuzzleMag
-								{
-									name="16Rnd_9x21_Mag";
-									ammoLeft=17;
-								};
-							};
-							class uniform
-							{
-								typeName="U_O_CombatUniform_ocamo";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="30Rnd_65x39_caseless_green";
-										count=2;
-										ammoLeft=30;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_HarnessO_brn";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=6;
-									class Item0
-									{
-										name="30Rnd_65x39_caseless_green";
-										count=9;
-										ammoLeft=30;
-									};
-									class Item1
-									{
-										name="16Rnd_9x21_Mag";
-										count=2;
-										ammoLeft=17;
-									};
-									class Item2
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellRed";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="Chemlight_red";
-										count=2;
-										ammoLeft=1;
-									};
-								};
-							};
-							class backpack
-							{
-								typeName="B_FieldPack_cbr_Ammo";
-								isBackpack=1;
-								class MagazineCargo
-								{
-									items=8;
-									class Item0
-									{
-										name="30Rnd_65x39_caseless_green";
-										count=6;
-										ammoLeft=30;
-									};
-									class Item1
-									{
-										name="150Rnd_762x54_Box";
-										count=1;
-										ammoLeft=150;
-									};
-									class Item2
-									{
-										name="RPG32_F";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="1Rnd_HE_Grenade_shell";
-										count=6;
-										ammoLeft=1;
-									};
-									class Item6
-									{
-										name="10Rnd_93x64_DMR_05_Mag";
-										count=2;
-										ammoLeft=10;
-									};
-									class Item7
-									{
-										name="10Rnd_762x54_Mag";
-										count=3;
-										ammoLeft=10;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=4;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-							hmd="NVGoggles_OPFOR";
-							headgear="H_HelmetO_ocamo";
-						};
-					};
-					id=350;
-					type="O_Soldier_A_F";
-					atlOffset=11.999306;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male03PER";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.95999998;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=349;
-			atlOffset=11.999306;
-		};
-		class Item29
-		{
 			dataType="Marker";
 			position[]={16855.939,20,12572.963};
 			name="spawn_marker_1_1";
@@ -2568,7 +3320,7 @@ class Mission
 			id=351;
 			atlOffset=-0.00017929077;
 		};
-		class Item30
+		class Item29
 		{
 			dataType="Marker";
 			position[]={16948.801,16.899,12723.2};
@@ -2577,7 +3329,7 @@ class Mission
 			id=352;
 			atlOffset=-0.00043869019;
 		};
-		class Item31
+		class Item30
 		{
 			dataType="Marker";
 			position[]={16996.801,14.964,12892.8};
@@ -2586,7 +3338,7 @@ class Mission
 			id=353;
 			atlOffset=-1.3187456;
 		};
-		class Item32
+		class Item31
 		{
 			dataType="Marker";
 			position[]={16776,5.7940001,13156.8};
@@ -2595,7 +3347,7 @@ class Mission
 			id=354;
 			atlOffset=-0.00036382675;
 		};
-		class Item33
+		class Item32
 		{
 			dataType="Marker";
 			position[]={16726.4,6.9401855,12419.2};
@@ -2604,7 +3356,7 @@ class Mission
 			id=355;
 			atlOffset=-0.7476902;
 		};
-		class Item34
+		class Item33
 		{
 			dataType="Marker";
 			position[]={16932.801,19.303711,12504};
@@ -2613,7 +3365,7 @@ class Mission
 			id=356;
 			atlOffset=-0.87615585;
 		};
-		class Item35
+		class Item34
 		{
 			dataType="Marker";
 			position[]={17220.801,16.471897,12667.2};
@@ -2621,7 +3373,7 @@ class Mission
 			type="Empty";
 			id=357;
 		};
-		class Item36
+		class Item35
 		{
 			dataType="Marker";
 			position[]={17160,16.644394,13086.4};
@@ -2629,7 +3381,7 @@ class Mission
 			type="Empty";
 			id=359;
 		};
-		class Item37
+		class Item36
 		{
 			dataType="Marker";
 			position[]={16936.305,14.203,12153.61};
@@ -2638,7 +3390,7 @@ class Mission
 			id=369;
 			atlOffset=-0.00029373169;
 		};
-		class Item38
+		class Item37
 		{
 			dataType="Marker";
 			position[]={17345.6,18.34376,12616};
@@ -2646,7 +3398,7 @@ class Mission
 			type="Empty";
 			id=370;
 		};
-		class Item39
+		class Item38
 		{
 			dataType="Marker";
 			position[]={17316.801,15.214656,13169.601};
@@ -2654,7 +3406,7 @@ class Mission
 			type="Empty";
 			id=372;
 		};
-		class Item40
+		class Item39
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2670,7 +3422,7 @@ class Mission
 			type="C_Rubberboat";
 			atlOffset=2.0838842;
 		};
-		class Item41
+		class Item40
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2687,7 +3439,7 @@ class Mission
 			type="C_Truck_02_covered_F";
 			atlOffset=-0.00049972534;
 		};
-		class Item42
+		class Item41
 		{
 			dataType="Marker";
 			position[]={16585.6,11,12782.4};
@@ -2701,7 +3453,7 @@ class Mission
 			angle=303.33301;
 			id=383;
 		};
-		class Item43
+		class Item42
 		{
 			dataType="Marker";
 			position[]={16580.801,11.161,12785.601};
@@ -2712,7 +3464,7 @@ class Mission
 			id=385;
 			atlOffset=3.7193298e-005;
 		};
-		class Item44
+		class Item43
 		{
 			dataType="Marker";
 			position[]={14878.608,17.92,16573.557};
@@ -2721,7 +3473,7 @@ class Mission
 			type="b_hq";
 			id=386;
 		};
-		class Item45
+		class Item44
 		{
 			dataType="Marker";
 			position[]={16487.82,13.717,10019.361};
@@ -2732,7 +3484,7 @@ class Mission
 			id=387;
 			atlOffset=-0.00030326843;
 		};
-		class Item46
+		class Item45
 		{
 			dataType="Marker";
 			position[]={16535.426,0,12446.508};
@@ -2743,7 +3495,7 @@ class Mission
 			id=388;
 			atlOffset=2.0936866;
 		};
-		class Item47
+		class Item46
 		{
 			dataType="Marker";
 			position[]={17264.875,16.542999,12414.316};
@@ -2754,7 +3506,7 @@ class Mission
 			id=389;
 			atlOffset=-0.0002117157;
 		};
-		class Item48
+		class Item47
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -2865,7 +3617,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item49
+		class Item48
 		{
 			dataType="Group";
 			side="Civilian";
@@ -2937,7 +3689,7 @@ class Mission
 			id=391;
 			atlOffset=3.825901;
 		};
-		class Item50
+		class Item49
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -3046,7 +3798,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item51
+		class Item50
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -3155,7 +3907,7 @@ class Mission
 				nAttributes=5;
 			};
 		};
-		class Item52
+		class Item51
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3172,13 +3924,13 @@ class Mission
 			type="C_Rubberboat";
 			atlOffset=-0.014636636;
 		};
-		class Item53
+		class Item52
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={16479.979,13.504744,9999.9629};
-				angles[]={6.2751446,0.73014849,0.0089989891};
+				position[]={16479.979,13.505292,9999.9629};
+				angles[]={6.2751393,0.73014104,0.0090058986};
 			};
 			side="Empty";
 			flags=4;
@@ -3187,9 +3939,112 @@ class Mission
 			};
 			id=397;
 			type="O_supplyCrate_F";
-			atlOffset=-0.00054836273;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_arsenal_attribute";
+					expression="if (!is3DEN) then {[_this, +_value] call ace_arsenal_fnc_attributeInit}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"ARRAY"
+								};
+							};
+							class value
+							{
+								items=2;
+								class Item0
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"ARRAY"
+											};
+										};
+										class value
+										{
+											items=2;
+											class Item0
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="arifle_MX_F";
+												};
+											};
+											class Item1
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="arifle_MX_GL_F";
+												};
+											};
+										};
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"SCALAR"
+											};
+										};
+										value=0;
+									};
+								};
+							};
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""arifle_MXC_F"",""arifle_MX_F"",""arifle_MX_GL_F"",""ACE_Flashlight_Maglite_ML300L"",""hlc_pistol_P226R_Combat"",""launch_RPG7_F"",""hlc_rifle_honeybase_x15"",""hlc_rifle_auga3_b_grip""],[]],[[""30Rnd_65x39_caseless_green_mag_Tracer"",""hlc_30Rnd_556x45_B_AUG"",""hlc_30Rnd_556x45_T_AUG"",""hlc_30Rnd_556x45_TDIM_AUG"",""hlc_40Rnd_556x45_B_AUG"",""hlc_40Rnd_556x45_T_AUG"",""hlc_40Rnd_556x45_TDIM_AUG"",""hlc_15Rnd_9x19_B_P226"",""hlc_15Rnd_9x19_SD_P226"",""ACE_HandFlare_Yellow"",""ACE_Chemlight_HiRed"",""ACE_Chemlight_IR"",""30Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""SmokeShell"",""RPG7_F"",""29rnd_300BLK_STANAG"",""29rnd_300BLK_STANAG_S""],[]],[[""muzzle_snds_M"",""optic_ACO_grn"",""optic_DMS"",""ACE_Banana"",""ACE_MapTools"",""ACE_SpraypaintBlack"",""ACE_SpraypaintRed"",""ACE_SpraypaintGreen"",""ACE_SpraypaintBlue"",""ACE_DefusalKit"",""ACE_Flashlight_XL50"",""ACE_EarPlugs"",""ACE_fieldDressing"",""ACE_morphine"",""ACE_adenosine"",""ACE_epinephrine"",""ACE_salineIV"",""ACE_salineIV_500"",""ACE_salineIV_250"",""ACE_personalAidKit"",""optic_Aco"",""acc_flashlight"",""acc_flashlight_smg_01"",""acc_pointer_IR"",""bipod_02_F_blk"",""ACE_acc_pointer_green"",""muzzle_snds_L"",""hlc_acc_DBALPL"",""ItemGPS"",""MineDetector"",""Binocular"",""NVGoggles"",""NVGoggles_OPFOR"",""V_TacVestIR_blk"",""TacVest_black"",""rhs_altyn"",""rhs_altyn_bala"",""rhs_altyn_visordown"",""INDBlk"",""INDBlue"",""INDBlackKhaki"",""INDBlackOlive"",""CFBK"",""CFBO"",""ACE_tourniquet"",""ACE_splint"",""hlc_muzzle_300blk_KAC""],[]],[[""B_AssaultPack_blk"",""B_AssaultPack_ocamo"",""B_TacticalPack_ocamo"",""B_TacticalPack_blk""],[]]],true]";
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
-		class Item54
+		class Item53
 		{
 			dataType="Marker";
 			position[]={16479.982,12.617,10000.307};
@@ -3199,6 +4054,22 @@ class Mission
 			colorName="ColorBrown";
 			id=399;
 			atlOffset=5.7220459e-006;
+		};
+		class Item54
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={16483.201,14.06103,10001.601};
+				angles[]={0,1.4383866,-0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=402;
+			type="Land_PortableLight_single_F";
 		};
 	};
 };
