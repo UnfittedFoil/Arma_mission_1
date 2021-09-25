@@ -6,7 +6,6 @@
 */
 
 if !(isServer) exitWith {};		//Runs only once, and only on the server
-systemChat "Trigger Activated"; 	//DEBUG. Allows for the confirmation of the activation of the trigger
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
