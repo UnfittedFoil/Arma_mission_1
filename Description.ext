@@ -1,0 +1,16 @@
+author="UnfittedFoil";
+overviewText="Improve your aim by purchasing the Marksman DLC.";
+showUAVFeed=0;
+saving=0;
+disabledAI=1;
+wreckRemovalMaxTime=3600;
+
+briefingName="PMC Pyrgos Rescue";
+onLoadName="PMC Pyrgos Rescue";
+
+class Header
+{
+  gameType="Coop";
+  minPlayers=1;
+  maxPlayers=11;
+};
