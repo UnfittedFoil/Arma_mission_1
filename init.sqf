@@ -92,3 +92,15 @@ closeOut = {
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+// This will be added to the JIP queue, and removed if Liang is deleted
+{
+  waitUntil { !isNil "ace_interact_menu_fnc_removeActionFromClass" };
+	[
+		typeOf Liang,
+		0,
+		["ACE_MainActions", "ACE_RemoveHandcuffs"]
+	] call ace_interact_menu_fnc_removeActionFromClass;
+} remoteExec ["call", 0, Liang];
+
+call startPhase1;
