@@ -95,12 +95,14 @@ closeOut = {
 
 // This will be added to the JIP queue, and removed if Liang is deleted
 {
-  waitUntil { !isNil "ace_interact_menu_fnc_removeActionFromClass" };
-	[
-		typeOf Liang,
-		0,
-		["ACE_MainActions", "ACE_RemoveHandcuffs"]
-	] call ace_interact_menu_fnc_removeActionFromClass;
+	waitUntil { !isNil "ace_interact_menu_fnc_removeActionFromClass" };
+	{
+		[typeOf Liang, 0, _x] call ace_interact_menu_fnc_removeActionFromClass;
+	} forEach [
+		["ACE_MainActions", "ACE_RemoveHandcuffs"],
+		["ACE_MainActions", "ACE_TeamManagement", "ACE_GetDown"],
+		["ACE_MainActions", "ACE_TeamManagement", "ACE_SendAway"]
+	];
 } remoteExec ["call", 0, Liang];
 
 Liang setVariable ["ace_medical_allowUnconsciousness", true, true];
