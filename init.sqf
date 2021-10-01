@@ -105,4 +105,16 @@ closeOut = {
 
 Liang setVariable ["ace_medical_allowUnconsciousness", true, true];
 
+[] spawn {
+	waitUntil {
+		allPlayers findIf {
+			!(_x getVariable ["playerReady", false])
+		} == -1 && {
+			getClientStateNumber > 9
+		};
+	};
+
+	missionNamespace setVariable ["allPlayersReady", true, true];
+};
+
 call startPhase1;
