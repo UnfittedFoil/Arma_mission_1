@@ -103,4 +103,6 @@ closeOut = {
 	] call ace_interact_menu_fnc_removeActionFromClass;
 } remoteExec ["call", 0, Liang];
 
+Liang setVariable ["ace_medical_allowUnconsciousness", true, true];
+
 call startPhase1;
