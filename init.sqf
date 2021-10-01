@@ -1,11 +1,9 @@
 /*
  * Author: UnfittedFoil
  * Description: Mission_1 init file
- *
- *
 */
 
-if !(isServer) exitWith {};		//Runs only once, and only on the server
+if !(isServer) exitWith {};	 // Runs only once, and only on the server
 
 _setBriefing = {
 	_situation = "
@@ -32,7 +30,7 @@ _setBriefing = {
 					1. Retrieve the hostage and ensure their compliance.
 					<br/>
 					2. Return to base with the hostage.
-					<br/> 
+					<br/>
 					- Alternate extraction methods are listed below.
 					<br/>
 					--- Alt extract A: <marker name=""marker_27"">KamAZ Transport(Seats 17)</marker>
@@ -42,9 +40,9 @@ _setBriefing = {
 					--- Alt extract C: <marker name=""marker_26"">Rescue Boat(seats 5)</marker>
 				";
 
-	_x createDiaryRecord["Diary",["Execution", _execution]];
-	_x createDiaryRecord["Diary",["Mission", _mission]];
-	_x createDiaryRecord["Diary",["Situtation", _situation]];
+	_x createDiaryRecord ["Diary", ["Execution", _execution]];
+	_x createDiaryRecord ["Diary", ["Mission", _mission]];
+	_x createDiaryRecord ["Diary", ["Situtation", _situation]];
 };
 
 _setBriefing forEach allPlayers;
@@ -55,34 +53,34 @@ _setBriefing forEach allPlayers;
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Phase 1 involves assaulting a NATO compound to reach the captive Liang Ng
+// Phase 1 involves assaulting a NATO compound to reach the captive Liang Ng
 startPhase1 = {
 	_taskDescription = "Find Liang Ng in the compound marked NATO COMPOUND. Remember that there it is unknown how compliant Liang will be with his rescue, nor is his compliance needed for the recue";
-	[TRUE, "tsk1", [_taskDescription, "Find Liang Ng", "Marker_23"], "Marker_23"] call BIS_fnc_taskCreate;
+	[true, "tsk1", [_taskDescription, "Find Liang Ng", "Marker_23"], "Marker_23"] call BIS_fnc_taskCreate;
 };
 
-//Phase 2 involves extricating from a town as new enemies begin a Search and Destroy mission for the players
+// Phase 2 involves extricating from a town as new enemies begin a Search and Destroy mission for the players
 startPhase2 = {
 	["tsk1", "SUCCEEDED"] call BIS_fnc_taskSetState;
 	_taskDescription = "Bring Liang Ng back to base. No need to remove the handcuffs.";
-	[TRUE, "tsk2", [_taskDescription, "return with Liang Ng", "Liang_Room"], "Liang_Room"] call BIS_fnc_taskCreate;
-	[]execVM "Phase2_spawner.sqf";
+	[true, "tsk2", [_taskDescription, "return with Liang Ng", "Liang_Room"], "Liang_Room"] call BIS_fnc_taskCreate;
+	[] execVM "Phase2_spawner.sqf";
 };
 
-//Phase 3 Wraps up the mission in the event not all alive players return. Completion causes a mission complete screen
-startPhase3 = { 
+// Phase 3 Wraps up the mission in the event not all alive players return. Completion causes a mission complete screen
+startPhase3 = {
 	Base_Area setTriggerStatements [
 									"count (allPlayers select {alive _x && _x inArea thisTrigger}) isEqualTo count allPlayers;",
 									"call closeOut",
 									""
 									];
 	_taskDescription = "No objectives left, everyone return to base";
-	[TRUE, "tsk3", [_taskDescription, "RTB", "Marker_25"], "Marker_25"] call BIS_fnc_taskCreate;
+	[true, "tsk3", [_taskDescription, "RTB", "Marker_25"], "Marker_25"] call BIS_fnc_taskCreate;
 };
 
-//close out the mission
+// close out the mission
 closeOut = {
-	//Ending dependent on if Liang lived
+	// Ending dependent on if Liang lived
 	_win = "tsk2" call BIS_fnc_taskCompleted;
 	["temp1", _win, true, _win] call BIS_fnc_endMission;
 };
@@ -94,4 +92,3 @@ closeOut = {
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-call startPhase1;
