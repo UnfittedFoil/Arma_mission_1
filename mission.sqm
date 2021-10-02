@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={16676.203,345.44705,12184.44};
-		dir[]={0.47688687,-0.4691276,0.74338603};
-		up[]={0.25330591,0.88312227,0.39485526};
-		aside[]={0.84174246,-1.5928817e-006,-0.53998607};
+		pos[]={16440.695,44.948864,10000.665};
+		dir[]={0.35432729,-0.90579569,-0.23268016};
+		up[]={0.75708991,0.42381364,-0.49717087};
+		aside[]={-0.54895145,2.2693712e-007,-0.83594227};
 	};
 };
 binarizationWanted=0;
@@ -470,9 +470,9 @@ class Mission
 		windForced=1;
 		year=2035;
 		month=8;
-		day=17;
-		hour=22;
-		minute=25;
+		day=20;
+		hour=23;
+		minute=12;
 		startFogDecay=0.014;
 		forecastFogDecay=0.014;
 	};
@@ -1341,7 +1341,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={16766.4,18.570499,12619.2};
-				angles[]={6.2405472,5.4396849,0.041311946};
+				angles[]={6.2405472,5.4396844,0.041311946};
 			};
 			areaSize[]={240.659,0,172.478};
 			areaIsRectangle=1;
@@ -1422,7 +1422,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=20;
+							value=30;
 						};
 					};
 				};
@@ -2463,8 +2463,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={16475.213,14.125659,9991.9453};
-				angles[]={6.2738566,2.8758032,6.2751846};
+				position[]={16475.213,14.126156,9991.9453};
+				angles[]={6.2738476,2.8757963,6.2751913};
 			};
 			side="Empty";
 			flags=4;
@@ -2474,10 +2474,28 @@ class Mission
 			};
 			id=307;
 			type="C_Offroad_02_unarmed_F";
-			atlOffset=-0.00049686432;
 			class CustomAttributes
 			{
 				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				class Attribute1
 				{
 					property="VehicleCustomization";
 					expression="if (local _this) then {if (isSimpleObject _this) then {_this setVariable ['bis_fnc_initVehicle_customization',_value]} else {([_this] + _value + [true]) call (uinamespace getvariable 'bis_fnc_initVehicle');};};";
@@ -2809,7 +2827,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				nAttributes=2;
 			};
 		};
 		class Item24
@@ -2818,7 +2836,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={16455.592,15.84443,9999.0684};
-				angles[]={6.0883551,2.3558509,6.1980586};
+				angles[]={6.0883541,2.3558452,6.1980653};
 			};
 			side="Empty";
 			flags=4;
@@ -2832,6 +2850,25 @@ class Mission
 			{
 				class Attribute0
 				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				class Attribute1
+				{
 					property="VehicleCustomization";
 					expression="if (local _this) then {if (isSimpleObject _this) then {_this setVariable ['bis_fnc_initVehicle_customization',_value]} else {([_this] + _value + [true]) call (uinamespace getvariable 'bis_fnc_initVehicle');};};";
 					class Value
@@ -3162,7 +3199,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				nAttributes=2;
 			};
 		};
 		class Item25
@@ -3170,8 +3207,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={16461.053,14.538485,9993.4541};
-				angles[]={6.1585021,2.3558509,6.1980586};
+				position[]={16461.053,14.538921,9993.4541};
+				angles[]={6.1584988,2.3558452,6.1980653};
 			};
 			side="Empty";
 			flags=4;
@@ -3181,10 +3218,29 @@ class Mission
 			};
 			id=314;
 			type="C_Offroad_02_unarmed_F";
-			atlOffset=-0.0054368973;
+			atlOffset=-0.0050001144;
 			class CustomAttributes
 			{
 				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				class Attribute1
 				{
 					property="VehicleCustomization";
 					expression="if (local _this) then {if (isSimpleObject _this) then {_this setVariable ['bis_fnc_initVehicle_customization',_value]} else {([_this] + _value + [true]) call (uinamespace getvariable 'bis_fnc_initVehicle');};};";
@@ -3516,7 +3572,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=1;
+				nAttributes=2;
 			};
 		};
 		class Item26
