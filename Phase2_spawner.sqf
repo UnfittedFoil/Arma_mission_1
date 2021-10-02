@@ -172,4 +172,4 @@ _uniforms = nil;
 	sleep 100
 } forEach _spawnPoints;
 
-sleep 0 // 5 minutes from previous group, 22.5 from start
+sleep 0; // 5 minutes from previous group, 22.5 from start

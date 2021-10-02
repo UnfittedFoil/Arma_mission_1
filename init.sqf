@@ -69,20 +69,37 @@ startPhase2 = {
 
 // Phase 3 Wraps up the mission in the event not all alive players return. Completion causes a mission complete screen
 startPhase3 = {
+	returnedEarly = FALSE;
 	Base_Area setTriggerStatements [
 									"allPlayers select {alive _x} findIf {!(_x inArea thisTrigger)} == -1",
-									"call closeOut",
+									"returnedEarly = TRUE;",
 									""
 									];
-	_taskDescription = "No objectives left, everyone return to base";
-	[true, "tsk3", [_taskDescription, "RTB", "Marker_25"], "Marker_25"] call BIS_fnc_taskCreate;
+	_handle = [] spawn {
+		sleep 2; // 2 seconds for the trigger to update
+		if (returnedEarly) then{
+			call closeOut;
+		}
+		else{
+			_taskDescription = "No objectives left, everyone return to base";
+			[true, "tsk3", [_taskDescription, "RTB", "Marker_25"], "Marker_25"] call BIS_fnc_taskCreate;
+			Base_Area setTriggerStatements [
+									"allPlayers select {alive _x} findIf {!(_x inArea thisTrigger)} == -1",
+									"returnedEarly = TRUE;",
+									"[""tsk3"", ""SUCCEEDED""] call BIS_fnc_taskSetState;call closeOut;"
+									];
+		};
+	};
 };
 
 // close out the mission
 closeOut = {
 	// Ending dependent on if Liang lived
-	_win = "tsk2" call BIS_fnc_taskCompleted;
-	["temp1", _win, true, _win] call BIS_fnc_endMission;
+	_handle = [] spawn {
+		_win = "tsk2" call BIS_fnc_taskCompleted;
+		sleep 8;
+		["temp1", _win, true, _win] call BIS_fnc_endMission;
+	}
 };
 
 
