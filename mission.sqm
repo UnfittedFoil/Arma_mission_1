@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={16381.695,312.47601,12763.984};
-		dir[]={0.73382646,-0.67926729,-0.0097306678};
-		up[]={0.67920756,0.73389089,-0.0090064118};
-		aside[]={-0.013259009,0,-0.99991202};
+		pos[]={16429.617,126.94559,9946.5986};
+		dir[]={0.39967707,-0.81103486,0.42718622};
+		up[]={0.55410457,0.58499426,0.59224147};
+		aside[]={0.73023105,-6.2631443e-008,-0.68320763};
 	};
 };
 binarizationWanted=0;
@@ -352,7 +352,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category0
+	class Category1
 	{
 		name="Multiplayer";
 		class Attribute0
@@ -407,7 +407,7 @@ class CustomAttributes
 		};
 		nAttributes=1;
 	};
-	class Category1
+	class Category2
 	{
 		name="Scenario";
 		class Attribute0
@@ -471,8 +471,8 @@ class Mission
 		year=2035;
 		month=8;
 		day=20;
-		hour=23;
-		minute=12;
+		hour=22;
+		minute=17;
 		startFogDecay=0.014;
 		forecastFogDecay=0.014;
 	};
@@ -3838,7 +3838,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={16480,13.869639,10000};
+				position[]={16480,13.869761,10000};
 				angles[]={0,0.73014104,0};
 			};
 			side="Empty";
@@ -3848,6 +3848,7 @@ class Mission
 			};
 			id=397;
 			type="O_supplyCrate_F";
+			atlOffset=0.00012207031;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3946,7 +3947,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[""arifle_MXC_F"",""arifle_MX_F"",""arifle_MX_GL_F"",""ACE_Flashlight_Maglite_ML300L"",""hlc_pistol_P226R_Combat"",""launch_RPG7_F"",""hlc_rifle_honeybase_x15"",""hlc_rifle_auga3_b_grip""],[]],[[""30Rnd_65x39_caseless_green_mag_Tracer"",""hlc_30Rnd_556x45_B_AUG"",""hlc_30Rnd_556x45_T_AUG"",""hlc_30Rnd_556x45_TDIM_AUG"",""hlc_40Rnd_556x45_B_AUG"",""hlc_40Rnd_556x45_T_AUG"",""hlc_40Rnd_556x45_TDIM_AUG"",""hlc_15Rnd_9x19_B_P226"",""hlc_15Rnd_9x19_SD_P226"",""ACE_Chemlight_IR"",""30Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""SmokeShell"",""RPG7_F"",""29rnd_300BLK_STANAG"",""29rnd_300BLK_STANAG_S"",""SmokeShellOrange"",""ACE_Chemlight_Orange"",""ACE_Chemlight_UltraHiOrange""],[]],[[""muzzle_snds_M"",""optic_ACO_grn"",""optic_DMS"",""ACE_Banana"",""ACE_MapTools"",""ACE_SpraypaintBlack"",""ACE_SpraypaintRed"",""ACE_SpraypaintGreen"",""ACE_SpraypaintBlue"",""ACE_DefusalKit"",""ACE_Flashlight_XL50"",""ACE_EarPlugs"",""ACE_fieldDressing"",""ACE_morphine"",""ACE_adenosine"",""ACE_epinephrine"",""ACE_salineIV"",""ACE_salineIV_500"",""ACE_salineIV_250"",""ACE_personalAidKit"",""optic_Aco"",""acc_flashlight"",""acc_flashlight_smg_01"",""acc_pointer_IR"",""bipod_02_F_blk"",""ACE_acc_pointer_green"",""muzzle_snds_L"",""hlc_acc_DBALPL"",""ItemGPS"",""MineDetector"",""Binocular"",""NVGoggles"",""NVGoggles_OPFOR"",""V_TacVestIR_blk"",""TacVest_black"",""INDBlk"",""INDBlue"",""INDBlackKhaki"",""INDBlackOlive"",""CFBK"",""CFBO"",""ACE_tourniquet"",""ACE_splint"",""hlc_muzzle_300blk_KAC"",""rhs_altyn_novisor"",""rhs_altyn_novisor_bala"",""ACE_IR_Strobe_Item"",""ItemWatch"",""ItemCompass"",""ItemRadio"",""ItemMap"",""optic_Hamr"",""optic_Arco_blk_F"",""optic_ERCO_blk_F""],[]],[[""B_AssaultPack_blk"",""B_AssaultPack_ocamo"",""B_TacticalPack_ocamo"",""B_TacticalPack_blk""],[]]],true]";
+							value="[[[[""arifle_MXC_F"",""arifle_MX_F"",""arifle_MX_GL_F"",""ACE_Flashlight_Maglite_ML300L"",""hlc_pistol_P226R_Combat"",""launch_RPG7_F"",""hlc_rifle_honeybase_x15"",""hlc_rifle_auga3_b_grip""],[]],[[""30Rnd_65x39_caseless_green_mag_Tracer"",""hlc_30Rnd_556x45_B_AUG"",""hlc_30Rnd_556x45_T_AUG"",""hlc_30Rnd_556x45_TDIM_AUG"",""hlc_40Rnd_556x45_B_AUG"",""hlc_40Rnd_556x45_T_AUG"",""hlc_40Rnd_556x45_TDIM_AUG"",""hlc_15Rnd_9x19_B_P226"",""hlc_15Rnd_9x19_SD_P226"",""ACE_Chemlight_IR"",""30Rnd_65x39_caseless_mag"",""1Rnd_HE_Grenade_shell"",""SmokeShell"",""RPG7_F"",""SmokeShellOrange"",""ACE_Chemlight_Orange"",""ACE_Chemlight_UltraHiOrange"",""hlc_29rnd_300BLK_STANAG"",""hlc_29rnd_300BLK_STANAG_S""],[]],[[""muzzle_snds_M"",""optic_ACO_grn"",""optic_DMS"",""ACE_Banana"",""ACE_MapTools"",""ACE_SpraypaintBlack"",""ACE_SpraypaintRed"",""ACE_SpraypaintGreen"",""ACE_SpraypaintBlue"",""ACE_DefusalKit"",""ACE_Flashlight_XL50"",""ACE_EarPlugs"",""ACE_fieldDressing"",""ACE_morphine"",""ACE_adenosine"",""ACE_epinephrine"",""ACE_salineIV"",""ACE_salineIV_500"",""ACE_salineIV_250"",""ACE_personalAidKit"",""optic_Aco"",""acc_flashlight"",""acc_flashlight_smg_01"",""acc_pointer_IR"",""bipod_02_F_blk"",""ACE_acc_pointer_green"",""muzzle_snds_L"",""hlc_acc_DBALPL"",""ItemGPS"",""MineDetector"",""Binocular"",""NVGoggles"",""NVGoggles_OPFOR"",""V_TacVestIR_blk"",""TacVest_black"",""INDBlk"",""INDBlue"",""INDBlackKhaki"",""INDBlackOlive"",""CFBK"",""CFBO"",""ACE_tourniquet"",""ACE_splint"",""hlc_muzzle_300blk_KAC"",""rhs_altyn_novisor"",""rhs_altyn_novisor_bala"",""ACE_IR_Strobe_Item"",""ItemWatch"",""ItemCompass"",""ItemRadio"",""ItemMap"",""optic_Hamr"",""optic_Arco_blk_F"",""optic_ERCO_blk_F""],[]],[[""B_AssaultPack_blk"",""B_AssaultPack_ocamo"",""B_TacticalPack_ocamo"",""B_TacticalPack_blk""],[]]],true]";
 						};
 					};
 				};
@@ -4315,8 +4316,8 @@ class Mission
 								underBarrel="bipod_01_F_snd";
 								class primaryMuzzleMag
 								{
-									name="hlc_30Rnd_556x45_B_AUG";
-									ammoLeft=30;
+									name="hlc_40Rnd_556x45_TDIM_AUG";
+									ammoLeft=42;
 								};
 							};
 							class handgun
@@ -4714,7 +4715,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={16444.801,14.446264,9992.0498};
-						angles[]={0,1.1831052,0};
+						angles[]={0,1.1831064,0};
 					};
 					side="East";
 					flags=5;
@@ -4890,6 +4891,48 @@ class Mission
 					};
 					id=416;
 					type="O_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male03PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.95999998;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item4
 				{
@@ -4914,7 +4957,7 @@ class Mission
 								flashlight="acc_pointer_IR";
 								class primaryMuzzleMag
 								{
-									name="29rnd_300BLK_STANAG_S";
+									name="hlc_29rnd_300BLK_STANAG_S";
 									ammoLeft=30;
 								};
 							};
@@ -4931,39 +4974,39 @@ class Mission
 									items=6;
 									class Item0
 									{
-										name="29rnd_300BLK_STANAG";
-										count=2;
-										ammoLeft=30;
-									};
-									class Item1
-									{
-										name="29rnd_300BLK_STANAG_S";
-										count=1;
-										ammoLeft=30;
-									};
-									class Item2
-									{
 										name="ACE_Chemlight_IR";
 										count=2;
 										ammoLeft=1;
 									};
-									class Item3
+									class Item1
 									{
 										name="SmokeShell";
 										count=1;
 										ammoLeft=1;
 									};
-									class Item4
+									class Item2
 									{
 										name="ACE_Chemlight_Orange";
 										count=1;
 										ammoLeft=1;
 									};
-									class Item5
+									class Item3
 									{
 										name="ACE_Chemlight_UltraHiOrange";
 										count=1;
 										ammoLeft=1;
+									};
+									class Item4
+									{
+										name="hlc_29rnd_300BLK_STANAG";
+										count=1;
+										ammoLeft=30;
+									};
+									class Item5
+									{
+										name="hlc_29rnd_300BLK_STANAG_S";
+										count=1;
+										ammoLeft=30;
 									};
 								};
 								class ItemCargo
@@ -5015,33 +5058,33 @@ class Mission
 									items=5;
 									class Item0
 									{
-										name="29rnd_300BLK_STANAG_S";
-										count=6;
-										ammoLeft=30;
-									};
-									class Item1
-									{
-										name="29rnd_300BLK_STANAG";
-										count=3;
-										ammoLeft=30;
-									};
-									class Item2
-									{
 										name="ACE_Chemlight_Orange";
 										count=1;
 										ammoLeft=1;
 									};
-									class Item3
+									class Item1
 									{
 										name="ACE_Chemlight_UltraHiOrange";
 										count=1;
 										ammoLeft=1;
 									};
-									class Item4
+									class Item2
 									{
 										name="SmokeShell";
 										count=1;
 										ammoLeft=1;
+									};
+									class Item3
+									{
+										name="hlc_29rnd_300BLK_STANAG";
+										count=2;
+										ammoLeft=30;
+									};
+									class Item4
+									{
+										name="hlc_29rnd_300BLK_STANAG_S";
+										count=4;
+										ammoLeft=30;
 									};
 								};
 								class ItemCargo
@@ -5104,7 +5147,7 @@ class Mission
 								underBarrel="bipod_01_F_snd";
 								class primaryMuzzleMag
 								{
-									name="29rnd_300BLK_STANAG_S";
+									name="hlc_29rnd_300BLK_STANAG";
 									ammoLeft=30;
 								};
 							};
@@ -5118,42 +5161,36 @@ class Mission
 								isBackpack=0;
 								class MagazineCargo
 								{
-									items=6;
+									items=5;
 									class Item0
-									{
-										name="29rnd_300BLK_STANAG";
-										count=2;
-										ammoLeft=30;
-									};
-									class Item1
-									{
-										name="29rnd_300BLK_STANAG_S";
-										count=1;
-										ammoLeft=30;
-									};
-									class Item2
 									{
 										name="ACE_Chemlight_IR";
 										count=2;
 										ammoLeft=1;
 									};
-									class Item3
+									class Item1
 									{
 										name="SmokeShell";
 										count=1;
 										ammoLeft=1;
 									};
-									class Item4
+									class Item2
 									{
 										name="ACE_Chemlight_Orange";
 										count=1;
 										ammoLeft=1;
 									};
-									class Item5
+									class Item3
 									{
 										name="ACE_Chemlight_UltraHiOrange";
 										count=1;
 										ammoLeft=1;
+									};
+									class Item4
+									{
+										name="hlc_29rnd_300BLK_STANAG_S";
+										count=2;
+										ammoLeft=30;
 									};
 								};
 								class ItemCargo
@@ -5205,33 +5242,33 @@ class Mission
 									items=5;
 									class Item0
 									{
-										name="29rnd_300BLK_STANAG_S";
-										count=3;
-										ammoLeft=30;
-									};
-									class Item1
-									{
-										name="29rnd_300BLK_STANAG";
-										count=6;
-										ammoLeft=30;
-									};
-									class Item2
-									{
 										name="ACE_Chemlight_Orange";
 										count=1;
 										ammoLeft=1;
 									};
-									class Item3
+									class Item1
 									{
 										name="ACE_Chemlight_UltraHiOrange";
 										count=1;
 										ammoLeft=1;
 									};
-									class Item4
+									class Item2
 									{
 										name="SmokeShell";
 										count=1;
 										ammoLeft=1;
+									};
+									class Item3
+									{
+										name="hlc_29rnd_300BLK_STANAG";
+										count=3;
+										ammoLeft=30;
+									};
+									class Item4
+									{
+										name="hlc_29rnd_300BLK_STANAG_S";
+										count=3;
+										ammoLeft=30;
 									};
 								};
 								class ItemCargo
@@ -5508,7 +5545,7 @@ class Mission
 								flashlight="acc_pointer_IR";
 								class primaryMuzzleMag
 								{
-									name="29rnd_300BLK_STANAG_S";
+									name="hlc_29rnd_300BLK_STANAG_S";
 									ammoLeft=30;
 								};
 							};
@@ -5525,39 +5562,39 @@ class Mission
 									items=6;
 									class Item0
 									{
-										name="29rnd_300BLK_STANAG";
-										count=2;
-										ammoLeft=30;
-									};
-									class Item1
-									{
-										name="29rnd_300BLK_STANAG_S";
-										count=1;
-										ammoLeft=30;
-									};
-									class Item2
-									{
 										name="ACE_Chemlight_IR";
 										count=2;
 										ammoLeft=1;
 									};
-									class Item3
+									class Item1
 									{
 										name="SmokeShell";
 										count=1;
 										ammoLeft=1;
 									};
-									class Item4
+									class Item2
 									{
 										name="ACE_Chemlight_Orange";
 										count=1;
 										ammoLeft=1;
 									};
-									class Item5
+									class Item3
 									{
 										name="ACE_Chemlight_UltraHiOrange";
 										count=1;
 										ammoLeft=1;
+									};
+									class Item4
+									{
+										name="hlc_29rnd_300BLK_STANAG_S";
+										count=1;
+										ammoLeft=30;
+									};
+									class Item5
+									{
+										name="hlc_29rnd_300BLK_STANAG";
+										count=1;
+										ammoLeft=30;
 									};
 								};
 								class ItemCargo
@@ -5609,33 +5646,33 @@ class Mission
 									items=5;
 									class Item0
 									{
-										name="29rnd_300BLK_STANAG_S";
-										count=5;
-										ammoLeft=30;
-									};
-									class Item1
-									{
-										name="29rnd_300BLK_STANAG";
-										count=2;
-										ammoLeft=30;
-									};
-									class Item2
-									{
 										name="ACE_Chemlight_Orange";
 										count=1;
 										ammoLeft=1;
 									};
-									class Item3
+									class Item1
 									{
 										name="ACE_Chemlight_UltraHiOrange";
 										count=1;
 										ammoLeft=1;
 									};
-									class Item4
+									class Item2
 									{
 										name="SmokeShell";
 										count=1;
 										ammoLeft=1;
+									};
+									class Item3
+									{
+										name="hlc_29rnd_300BLK_STANAG_S";
+										count=4;
+										ammoLeft=30;
+									};
+									class Item4
+									{
+										name="hlc_29rnd_300BLK_STANAG";
+										count=2;
+										ammoLeft=30;
 									};
 								};
 								class ItemCargo
@@ -6144,7 +6181,7 @@ class Mission
 								flashlight="acc_pointer_IR";
 								class primaryMuzzleMag
 								{
-									name="29rnd_300BLK_STANAG_S";
+									name="hlc_29rnd_300BLK_STANAG_S";
 									ammoLeft=30;
 								};
 							};
@@ -6161,39 +6198,39 @@ class Mission
 									items=6;
 									class Item0
 									{
-										name="29rnd_300BLK_STANAG";
-										count=2;
-										ammoLeft=30;
-									};
-									class Item1
-									{
-										name="29rnd_300BLK_STANAG_S";
-										count=1;
-										ammoLeft=30;
-									};
-									class Item2
-									{
 										name="ACE_Chemlight_IR";
 										count=2;
 										ammoLeft=1;
 									};
-									class Item3
+									class Item1
 									{
 										name="SmokeShell";
 										count=1;
 										ammoLeft=1;
 									};
-									class Item4
+									class Item2
 									{
 										name="ACE_Chemlight_Orange";
 										count=1;
 										ammoLeft=1;
 									};
-									class Item5
+									class Item3
 									{
 										name="ACE_Chemlight_UltraHiOrange";
 										count=1;
 										ammoLeft=1;
+									};
+									class Item4
+									{
+										name="hlc_29rnd_300BLK_STANAG";
+										count=1;
+										ammoLeft=30;
+									};
+									class Item5
+									{
+										name="hlc_29rnd_300BLK_STANAG_S";
+										count=1;
+										ammoLeft=30;
 									};
 								};
 								class ItemCargo
@@ -6245,33 +6282,33 @@ class Mission
 									items=5;
 									class Item0
 									{
-										name="29rnd_300BLK_STANAG_S";
-										count=6;
-										ammoLeft=30;
-									};
-									class Item1
-									{
-										name="29rnd_300BLK_STANAG";
-										count=3;
-										ammoLeft=30;
-									};
-									class Item2
-									{
 										name="ACE_Chemlight_Orange";
 										count=1;
 										ammoLeft=1;
 									};
-									class Item3
+									class Item1
 									{
 										name="ACE_Chemlight_UltraHiOrange";
 										count=1;
 										ammoLeft=1;
 									};
-									class Item4
+									class Item2
 									{
 										name="SmokeShell";
 										count=1;
 										ammoLeft=1;
+									};
+									class Item3
+									{
+										name="hlc_29rnd_300BLK_STANAG";
+										count=2;
+										ammoLeft=30;
+									};
+									class Item4
+									{
+										name="hlc_29rnd_300BLK_STANAG_S";
+										count=4;
+										ammoLeft=30;
 									};
 								};
 								class ItemCargo
@@ -6500,30 +6537,36 @@ class Mission
 								isBackpack=1;
 								class MagazineCargo
 								{
-									items=4;
+									items=5;
 									class Item0
 									{
 										name="30Rnd_65x39_caseless_mag";
-										count=3;
+										count=2;
 										ammoLeft=30;
 									};
 									class Item1
-									{
-										name="29rnd_300BLK_STANAG_S";
-										count=3;
-										ammoLeft=30;
-									};
-									class Item2
 									{
 										name="hlc_30Rnd_556x45_TDIM_AUG";
 										count=2;
 										ammoLeft=30;
 									};
-									class Item3
+									class Item2
 									{
 										name="hlc_40Rnd_556x45_TDIM_AUG";
 										count=1;
 										ammoLeft=42;
+									};
+									class Item3
+									{
+										name="hlc_29rnd_300BLK_STANAG";
+										count=2;
+										ammoLeft=30;
+									};
+									class Item4
+									{
+										name="hlc_29rnd_300BLK_STANAG_S";
+										count=3;
+										ammoLeft=30;
 									};
 								};
 							};
