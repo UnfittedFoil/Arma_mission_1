@@ -70,7 +70,7 @@ startPhase2 = {
 // Phase 3 Wraps up the mission in the event not all alive players return. Completion causes a mission complete screen
 startPhase3 = {
 	Base_Area setTriggerStatements [
-									"count (allPlayers select {alive _x && _x inArea thisTrigger}) isEqualTo count allPlayers;",
+									"allPlayers select {alive _x} findIf {!(_x inArea thisTrigger)} == -1",
 									"call closeOut",
 									""
 									];
