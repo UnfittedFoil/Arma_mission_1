@@ -68,7 +68,7 @@ _spawnPoints = [
 				"spawn_marker_1_4"
 ];
 _side = independent;
-_totalUnitsPerGroup = 4;
+_totalUnitsPerGroup = 6;
 _spawnableSquadLeads= ["I_C_Soldier_Bandit_6_F", 1]; //// UGL
 _spawnableUnits = [
 					"I_C_Soldier_Bandit_4_F", 50, // Rifleman
@@ -105,9 +105,10 @@ _uniforms = [
 {
 	_marker = _x;
 	call _spawnGroup;
+	sleep 80; //Staggers unit spawns by 80 seconds
 } forEach _spawnPoints;
 
-sleep 480;  // 8 minutes since the start
+sleep 80;  // 8 minutes for spawning group, total of 8 minutes since the start
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -122,7 +123,7 @@ _spawnPoints = [
 				"spawn_marker_2_2",
 				"spawn_marker_2_3"
 ];
-_totalUnitsPerGroup = 6;
+_totalUnitsPerGroup = 8;
 _spawnableSquadLeads= ["I_C_Soldier_Bandit_6_F", 1]; // UGL
 _spawnableUnits = [
 					"I_C_Soldier_Bandit_1_F", 15, // Medic
@@ -134,9 +135,10 @@ _spawnableUnits = [
 {
 	_marker = _x;
 	call _spawnGroup;
+	sleep 120; //Staggers unit spawns by 2 minutes each
 } forEach _spawnPoints;
 
-sleep 660; // 11 minutes from previous, 19 minutes from start
+sleep 90; // 9.5 minutes from previous group, 17.5 minutes from start
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -150,7 +152,7 @@ _spawnPoints = [
 				"spawn_marker_3_1",
 				"spawn_marker_3_2"
 ];
-_totalUnitsPerGroup = 8;
+_totalUnitsPerGroup = 12;
 _spawnableSquadLeads= ["I_C_Soldier_Para_4_F", 1]; // Machine Gunner
 _spawnableUnits = [
 					"I_C_Soldier_Para_1_F", 10, // Rifleman
@@ -167,4 +169,7 @@ _uniforms = nil;
 {
 	_marker = _x;
 	call _spawnGroup;
+	sleep 100
 } forEach _spawnPoints;
+
+sleep 0 // 5 minutes from previous group, 22.5 from start
