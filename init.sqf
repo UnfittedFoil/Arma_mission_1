@@ -3,7 +3,7 @@
  * Description: Mission_1 init file
 */
 
-if !(isServer) exitWith {};	 // Runs only once, and only on the server
+if !(isServer) exitWith {};     // Runs only once, and only on the server
 
 _setBriefing = {
   _situation = "
@@ -28,7 +28,7 @@ _setBriefing = {
                 <br/>
                 1) Retrieve the Liang and ensure his compliance.
                 <br/>
-                2. Return to base with the Liang.	
+                2. Return to base with the Liang.
                ";
 
   _x createDiaryRecord ["Diary", ["Execution", _execution]];
@@ -38,7 +38,6 @@ _setBriefing = {
 
 _setBriefing forEach allPlayers;
 
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
  * Phases Setup
@@ -47,42 +46,38 @@ _setBriefing forEach allPlayers;
 
 // Phase 1 involves assaulting a NATO compound to reach the captive Liang Ng
 startPhase1 = {
-	_taskDescription = "Find Liang Ng in the compound marked NATO COMPOUND. Remember that there it is unknown how compliant Liang will be with his rescue, nor is his compliance needed for the recue";
-	[true, "tsk1", [_taskDescription, "Find Liang Ng", "Marker_23"], "Marker_23"] call BIS_fnc_taskCreate;
+    _taskDescription = "Find Liang Ng in the compound marked NATO COMPOUND. Remember that there it is unknown how compliant Liang will be with his rescue, nor is his compliance needed for the recue";
+    [true, "tsk1", [_taskDescription, "Find Liang Ng", "Marker_23"], "Marker_23"] call BIS_fnc_taskCreate;
 };
 
 // Phase 2 involves extricating from a town as new enemies begin a Search and Destroy mission for the players
 startPhase2 = {
-	["tsk1", "SUCCEEDED"] call BIS_fnc_taskSetState;
-	_taskDescription = "Bring Liang Ng back to base. No need to remove the handcuffs.";
-	[true, "tsk2", [_taskDescription, "Return with Liang Ng", "Liang_Room"], "Liang_Room"] call BIS_fnc_taskCreate;
-	[] execVM "Phase2_spawner.sqf";
+    ["tsk1", "SUCCEEDED"] call BIS_fnc_taskSetState;
+    _taskDescription = "Bring Liang Ng back to base. No need to remove the handcuffs.";
+    [true, "tsk2", [_taskDescription, "Return with Liang Ng", "Liang_Room"], "Liang_Room"] call BIS_fnc_taskCreate;
+    [] execVM "Phase2_spawner.sqf";
 };
 
 // Phase 3 Wraps up the mission in the event not all alive players return. Completion causes a mission complete screen
 startPhase3 = {
-  
-
-
-  returnedEarly = FALSE;
+  returnedEarly = false;
   Base_Area setTriggerStatements [
                                   "allPlayers select {alive _x} findIf {!(_x inArea thisTrigger)} == -1",
-                                  "returnedEarly = TRUE;",
+                                  "returnedEarly = true;",
                                   ""
                                   ];
   _handle = [] spawn {
     sleep 2; // 2 seconds for the trigger to update
-    if (returnedEarly) then{
-    call closeOut;
-    }
-    else{
+    if (returnedEarly) then {
+      call closeOut;
+    } else {
       _taskDescription = "No objectives left, everyone return to base";
       [true, "tsk3", [_taskDescription, "RTB", "Marker_25"], "Marker_25"] call BIS_fnc_taskCreate;
       Base_Area setTriggerStatements [
                                       "allPlayers select {alive _x} findIf {!(_x inArea thisTrigger)} == -1",
-									  "[""tsk3"", ""SUCCEEDED""] call BIS_fnc_taskSetState;call closeOut;",
+                                      "[""tsk3"", ""SUCCEEDED""] call BIS_fnc_taskSetState;call closeOut;",
                                       ""
-									  ];
+                                      ];
     };
   };
 };
@@ -92,7 +87,7 @@ closeOut = {
   // Ending dependent on if Liang lived
   _handle = [] spawn {
     _win = "tsk2" call BIS_fnc_taskState;
-	systemChat str _win;
+    systemChat str _win;
     sleep 8;
     if(_win == "SUCCEEDED") then {
       ["MissionComplete", true, 3, true] remoteExec ["BIS_fnc_endMission", 0, true];
@@ -129,7 +124,6 @@ Liang setVariable ["ace_medical_allowUnconsciousness", true, true];
 Liang setVariable ["ace_medical_damageThreshold", 32 * ace_medical_playerDamageThreshold, true];
 
 
-
 [] spawn {
   waitUntil {
     allPlayers findIf {
@@ -144,17 +138,17 @@ Liang setVariable ["ace_medical_damageThreshold", 32 * ace_medical_playerDamageT
 // Updates player lighting variable based on the lighting on the server.
 [] spawn {
   while {true} do {
-	{
-	  if( !alive _x) then { continue; }; 
-	  _player = _x;
-	  _currentLighting = getLightingAt _player;
+    {
+      if (!alive _x) then { continue; };
+      _player = _x;
+      _currentLighting = getLightingAt _player;
       _player setVariable ["currentLighting", _currentLighting, owner _player];
-	} forEach (allPlayers);
-	sleep 3;
+    } forEach (allPlayers);
+    sleep 3;
   };
 };
 
-// Dylans' Garrison script
+// Garrison script
 holdPosition = {
   params ["_unit"];
 
@@ -187,11 +181,12 @@ holdPosition = {
 
   _unit setVariable ["holdScriptHandle", _scriptHandle];
 };
-//Add the Garrison script to all units
+
+// Add the Garrison script to appropriate units
 {
-  if(_x getVariable "garrisonUnit" == TRUE) then {
-    _x call holdPosition;
-  };
-}forEach allUnits;
+    if (_x getVariable ["garrisonUnit", false]) then {
+        _x call holdPosition;
+    };
+} forEach allUnits;
 
 call startPhase1;
