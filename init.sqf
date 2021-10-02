@@ -7,37 +7,28 @@ if !(isServer) exitWith {};	 // Runs only once, and only on the server
 
 _setBriefing = {
 	_situation = "
-					Outrage over the government's efforts to crackdown on civil disobedience over recent trade laws has resulted in an insurgence. The first large scale attack starting the war was the raid of the Kalithea port during November of 1934. Six months into the war NATO has officially backed the Altis government and deployed a small contingent of troops to assist in peacekeeping, deploying most of their troops to the Gravia airbase due to it's central location on the island.
+					Outrage over the Altis government's efforts to crackdown on civil disobedience resulting from recent changes to local trade laws has resulted in an insurgence. The first large scale attack launched by the insurgents was the raid of Kalithea port almost a year ago. Six months following the raid, NATO officially backed the Altis government and deployed a small contingent of troops to assist in peacekeeping. Most of these troops were deployed to Gravia air base and the area around due to its central location on the island.
 					<br/>
 					<br/>
-					We have been contracted to recover a man by the name Liang Ng from NATO custody. Our contact has confirmed that Liang Ng is currently being held in a NATO controlled compound in the city of Pyrgos. To our knowledge, these are the only NATO soldiers in Pyrgos.
+					We have been contracted to recover a man by the name Liang Ng from NATO custody. Our contact believes that Liang Ng is currently being held in a NATO controlled compound in the city of Pyrgos,  this has been confirmed by the observation team. To our knowledge these are the only NATO soldiers in Pyrgos.
 					<br/>
 					<br/>
-					Liang Ng is a well known Smugler in the area, and had been supplying the local resistance with  military equipment. NATO learned of his involvement and managed to set a trap for him. NATO likely plans to move Liang off island to make any rescue by the resistence less likely.
+					Liang Ng is an infamous smuggler in the area, and had been a primary source of military equipment for the insurgents. NATO learned of his involvement with the insurgents and ambushed Liang during one of his deals. NATO likely plans to move Liang off island to distance him from any potential help.
 					<br/>
 					<br/>
-					Initial observation operations of the facility found that there is around 10 nato guards, the area is reguraly patrolled by part of the group, and the team managed to acquire a package containing a few NATO weapons and 6.5mm ammo. The package also contained a few grenade launchers which is perfect since the intern Gary acquired 40m HE grenade rounds instead of v40 grenades.
+					Initial observations of the facility found that there are around 20 nato guards, and the scouting team found an unattended package containing a few NATO MXs and 6.5mm ammo. The package also contained a few grenade launchers which is perfect since the intern Gary sourced 40mm HE grenade rounds instead of the requested v40 grenades.
 					<br/>
 					<br/>
-					As predicted by our contact and confirmed by Gary, as of 01:42, NATO forces at the airport are being distracted likely by the resistance. This will be our best opportunity to retrieve the hostage.
+					As predicted by our contact and confirmed by Gary, as of 22:12, NATO forces at the airport are being distracted by something. This will be our best opportunity to retrieve the hostage.
 				 ";
 	_mission = "
-					Retrieve Liang Ng from NATO custody at mark <marker name =""marker_23"">NATO Compound</marker>and return him back to <marker name=""marker_25"">Base</marker>
+					Retrieve Liang Ng from NATO custody at mark <marker name =""marker_23"">NATO Compound</marker>and return him back to <marker name=""marker_25"">Base</marker>. Try to avoid civilian casualties. In the event something happens to the vehicles, alternate extraction has been prepared <marker name=""marker_27"">KamAZ Transport</marker>
 				";
 	_execution = "
-					* Keep civilian casualties to a minimium.
 					<br/>
-					1. Retrieve the hostage and ensure their compliance.
+					1) Retrieve the Liang and ensure his compliance.
 					<br/>
-					2. Return to base with the hostage.
-					<br/>
-					- Alternate extraction methods are listed below.
-					<br/>
-					--- Alt extract A: <marker name=""marker_27"">KamAZ Transport(Seats 17)</marker>
-					<br/>
-					--- Alt extract B: You have been equiped with boots
-					<br/>
-					--- Alt extract C: <marker name=""marker_26"">Rescue Boat(seats 5)</marker>
+					2. Return to base with the Liang.	
 				";
 
 	_x createDiaryRecord ["Diary", ["Execution", _execution]];
