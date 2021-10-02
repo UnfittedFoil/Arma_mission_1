@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={16447.641,172.59012,10170.131};
-		dir[]={-0.047788691,-0.27532375,-0.96022183};
-		up[]={-0.013688469,0.96133512,-0.27502167};
-		aside[]={-0.9988265,8.3553823e-007,0.049711797};
+		pos[]={16479.084,50.225716,9997.5684};
+		dir[]={0.64675039,-0.47352475,0.59801239};
+		up[]={0.34770042,0.88075554,0.32149541};
+		aside[]={0.67894632,-5.330221e-007,-0.73428929};
 	};
 };
 binarizationWanted=0;
@@ -3938,23 +3938,22 @@ class Mission
 		class Item49
 		{
 			dataType="Trigger";
-			position[]={16491.201,15.254729,10038.4};
-			angle=0.73171151;
+			position[]={16500.801,14.399867,10033.601};
+			angle=0.7317118;
 			class Attributes
 			{
 				name="Future_Liang_Room";
 				condition="call{Liang in thisList}";
 				onActivation="call{[""tsk2"", ""SUCCEEDED""] call BIS_fnc_taskSetState;" \n "call startPhase3;" \n "deleteVehicle this;}";
-				sizeA=2.7309999;
-				sizeB=2.714;
+				sizeA=150;
+				sizeB=150;
 				sizeC=0;
 				activationBy="CIV";
-				isRectangle=1;
 				isServerOnly=1;
 			};
 			id=403;
 			type="EmptyDetector";
-			atlOffset=0.65000057;
+			atlOffset=0.30599976;
 		};
 		class Item50
 		{
