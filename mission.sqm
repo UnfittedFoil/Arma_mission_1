@@ -352,7 +352,7 @@ randomSeed=3136377;
 class ScenarioData
 {
 	author="UnfittedFoil";
-	onLoadMission="Improve your aim by purchasing the Marksman DLC.";
+	onLoadMission="Extract a hostage from an enemy-controlled complex";
 	disabledAI=1;
 	respawn=1;
 	class Header
@@ -789,7 +789,7 @@ class Mission
 	class Intel
 	{
 		briefingName="PMC Pyrgos Rescue";
-		overviewText="Extract Hostage from a complex controlled by NATO";
+		overviewText="Extract a hostage from an enemy-controlled complex";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;

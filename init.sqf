@@ -46,7 +46,7 @@ _setBriefing forEach allPlayers;
 
 // Phase 1 involves assaulting a NATO compound to reach the captive Liang Ng
 startPhase1 = {
-    _taskDescription = "Find Liang Ng in the compound marked NATO COMPOUND. Remember that there it is unknown how compliant Liang will be with his rescue, nor is his compliance needed for the recue";
+    _taskDescription = "Find Liang Ng. Remember: it is unknown how compliant Liang will be with his rescue.";
     [true, "tsk1", [_taskDescription, "Find Liang Ng", "Marker_23"], "Marker_23"] call BIS_fnc_taskCreate;
 };
 
@@ -71,7 +71,7 @@ startPhase3 = {
     if (returnedEarly) then {
       call closeOut;
     } else {
-      _taskDescription = "No objectives left, everyone return to base";
+      _taskDescription = "No objectives left, return to base";
       [true, "tsk3", [_taskDescription, "RTB", "Marker_25"], "Marker_25"] call BIS_fnc_taskCreate;
       Base_Area setTriggerStatements [
                                       "allPlayers select {alive _x} findIf {!(_x inArea thisTrigger)} == -1",
