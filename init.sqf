@@ -6,34 +6,85 @@
 if !(isServer) exitWith {};     // Runs only once, and only on the server
 
 _setBriefing = {
-  _situation = "
-                Outrage over the Altis government's recent changes in law has and the efforts to enforce them has resulted in an armed conflict in Altis. The fighting has been between the government of Altis, and the recently created reformist faction. Six months ago, the fighting began escalating drastically, causing NATO to officially step in to back the Altis government. To assist, NATO has deployed a small contingent of troops to assist in peacekeeping. Most of these troops were deployed to Gravia air base and the area around due to its central location on the island.
-                <br/>
-                <br/>
-                We have been contracted to recover a man by the name Liang Ng from NATO custody. Our contact believes that Liang Ng is currently being held in a NATO controlled compound in the city of Pyrgos, and this has been confirmed by our observation team. To our knowledge these are the only NATO soldiers in the Pyrgos area.
-                <br/>
-                <br/>
-                Liang Ng is an infamous smuggler in the area, and had been a primary source of military equipment for the reformist. NATO learned of his involvement with the reformist and lured Liang into a trap. Based on recent movements and similar incidents, we believe NATO likely plans to move Liang off island to distance him from any potential help.
-                <br/>
-                <br/>
-                Initial observations of the facility found that there are around 20 nato guards, and the scouting team found an unattended package containing a few NATO MXs and 6.5mm ammo. The package also contained a few grenade launchers which is perfect since our recently hired intern Gary sourced 40mm HE grenade rounds instead of the v40 grenades.
-                <br/>
-                <br/>
-                As predicted by our contact and confirmed by Gary, as of 22:12, NATO forces at the airport are being occupied by something. This will be our best opportunity to retrieve the hostage.
-               ";
-  _mission = "
-                Retrieve Liang Ng from NATO custody at mark <marker name =""marker_23"">NATO Compound</marker>and return him back to <marker name=""marker_25"">Base</marker>. Try to avoid civilian casualties. In the event something happens to the vehicles, alternate extraction has been prepared <marker name=""marker_27"">KamAZ Transport</marker>
-               ";
-  _execution = "
-                <br/>
-                1) Retrieve the Liang and ensure his compliance.
-                <br/>
-                2. Return to base with the Liang.
-               ";
+	_background = "
+          Fifteen months ago, as part of a transnational free trade efort, the
+          island nation of Altis, along with eighty-three other countries,
+          entered into a trade agreement. This was a defeat for a
+          constituency of the workers on the island, mostly in the logging and
+          fishing industries, who had been embroiled in protests against the
+          agreement for the previous month; but this defeat only escalated the
+          actions undertaken by the increasingly organised protesters.
+          Recognizing the lack of protection as a threat to their relatively
+          comfortable lives, a keen sense of desperation mixed with the
+          already present furor.
+          <br/>
+          <br/>
+          As the level of violence on the streets grew, the government applied
+          more actively hostile measures. However, a failure to contain and
+          demoralise the protesters, and a failure to really disrupt their
+          organisational capacity, meant that this only outraged citizens and
+          delegitimized the government further, and what had been networks of
+          activists and protesters would soon act as cover for the cells of a
+          newborn insurgency.
+          <br/>
+          <br/>
+          The first large scale attack launched by the insurgents was the raid
+          of Kalithea port -- almost a year ago. During the raid, a docked cargo
+          ship was scuttled, destroying almost all goods on board. After six
+          months of an active insurgency on Altis, NATO officially backed the
+          government and deployed a small contingent of troops to assist in
+          peacekeeping. Most of these troops were deployed to the centrally
+          located Gravia air base.
+        ";
+    _situation = "
+          We have been contracted to recover a man by the name Liang Ng from
+          NATO custody. Our contact believes that Liang Ng is currently being
+          held in a guarded compound in the city of Pyrgos; we have received
+          tentative identification of Liang by an observation team. To our
+          knowledge these are the only NATO soldiers in Pyrgos.
+          <br/>
+          <br/>
+          Liang Ng is an infamous smuggler in the area, and had been a primary
+          source of military equipment for the insurgents. NATO learned of his
+          involvement with the insurgents, ambushed, and captured Liang during
+          one of his deals. They likely plan to move Liang off island.
+          <br/>
+          <br/>
+          Initial observations of the facility found that there are around
+          twenty guards present. A contact of ours, codename Geiserich, has
+          sourced MX-pattern rifles and 40mm grenades, which will be made
+          availble for use during the mission, in addition to our usual AR-15 and
+          AUG-pattern rifles.
+          <br/>
+          <br/>
+          We have intel that suggests the batallion stationed at Gravia will be
+          preoccupied at around 2200 hours tonight. This will be our best
+          opportunity to retrieve the hostage.
+         ";
+	_mission = "
+          Retrieve Liang Ng from NATO custody at mark
+          <marker name=""marker_23"">NATO Compound</marker>
+          and return him back to <marker name=""marker_25"">Base</marker>.
+          <br/>
+          <br/>
+          Try to avoid civilian casualties.
+          <br/>
+          <br/>
+          In the event something happens to the vehicles, alternate extraction
+          has been prepared:
+          <marker name=""marker_27"">KamAZ Transport</marker>.
+				";
+	_execution = "
+					1. Retrieve the Liang and ensure his compliance.
+					<br/>
+					<br/>
+					2. Return to base with the Liang.	
+				";
 
   _x createDiaryRecord ["Diary", ["Execution", _execution]];
   _x createDiaryRecord ["Diary", ["Mission", _mission]];
   _x createDiaryRecord ["Diary", ["Situtation", _situation]];
+  _x createDiaryRecord ["Diary", ["Background", _background]];
 };
 
 _setBriefing forEach allPlayers;
