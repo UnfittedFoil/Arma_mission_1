@@ -38,6 +38,45 @@ _setBriefing = {
 
 _setBriefing forEach allPlayers;
 
+//Dylans' Garrison script
+holdPosition = {
+  params ["_unit"];
+
+  doStop vehicle _unit;
+  _unit disableAI "PATH";
+
+  private _scriptHandle = _unit getVariable "holdScriptHandle";
+  if (!isNil "_scriptHandle" && {!scriptDone _scriptHandle}) exitWith {};
+
+  _scriptHandle = [_unit] spawn {
+    params ["_unit"];
+    while {true} do {
+      if (!alive _unit) exitWith {};
+
+      // "Un-leash" the unit if it knows of any nearby hostiles
+      if (
+          {
+            (_x select 3) > 0 // Hostile units
+          } count (_unit nearTargets 30) > 0
+      ) exitWith {
+        _unit enableAI "PATH";
+        _unit doFollow (leader _unit);
+        _unit forceSpeed -1;
+      };
+
+      // Stagger wakeup times so as not to hammer the server all at once
+      sleep (5 + random 1);
+    };
+  };
+
+  _unit setVariable ["holdScriptHandle", _scriptHandle];
+};
+
+{
+	if(_x getVariable "garrisonUnit" == TRUE) then {
+		_x call holdPosition;
+	};
+}forEach allUnits;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
  * Phases Setup
