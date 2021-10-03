@@ -45,7 +45,8 @@ _spawnGroup = {
 
   // Set AI Tasks
   // Set start tasks (rush towards players)
-  private _wp = _group addWaypoint [position player, 50];
+  _playerPosition = getPos (selectRandom (allPlayers select { alive _x }));
+  private _wp = _group addWaypoint [_playerPosition, 50];
   _wp setWaypointType "SAD";
   // Set final task (search for players)
   _wp = _group addWaypoint [getMarkerPos _wp, 500];
