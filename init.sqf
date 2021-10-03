@@ -184,9 +184,9 @@ holdPosition = {
 
 // Add the Garrison script to appropriate units
 {
-    if (_x getVariable ["garrisonUnit", false]) then {
-        _x call holdPosition;
-    };
+	if (_x getVariable ["garrisonUnit", false]) then {
+		[_x] call holdPosition;
+	};
 } forEach allUnits;
 
 call startPhase1;
