@@ -27,6 +27,10 @@
 _spawnGroup = {
   params ["_side", "_spawnableSquadLeads", "_totalUnits", "_squadUnits", "_location", "_uniforms"];
   
+  _validPlayers =  allPlayers select { alive _x && {_x distance (getMarkerPos _marker) < 1500}};
+  if (count _validPlayers == 0) exitWith {};
+  _playerPosition = selectRandom _validPlayers;
+
   _group = createGroup [_side, true];
   private _enemy = _group createUnit [selectRandomWeighted _spawnableSquadLeads, _location, [], 5, "NONE"];
   // Change uniform
@@ -45,7 +49,6 @@ _spawnGroup = {
 
   // Set AI Tasks
   // Set start tasks (rush towards players)
-  _playerPosition = getPos (selectRandom (allPlayers select { alive _x }));
   private _wp = _group addWaypoint [_playerPosition, 50];
   _wp setWaypointType "SAD";
   // Set final task (search for players)
