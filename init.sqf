@@ -156,4 +156,11 @@ holdPosition = {
 	};
 } forEach allUnits;
 
+civDeathCounter = 0;
+
+["Civilian", "Killed", {
+  params ["_unit"];
+  civDeathCounter = civDeathCounter + 1;
+}] call CBA_fnc_addClassEventHandler;
+
 call startPhase1;
