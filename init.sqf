@@ -38,45 +38,7 @@ _setBriefing = {
 
 _setBriefing forEach allPlayers;
 
-//Dylans' Garrison script
-holdPosition = {
-  params ["_unit"];
 
-  doStop vehicle _unit;
-  _unit disableAI "PATH";
-
-  private _scriptHandle = _unit getVariable "holdScriptHandle";
-  if (!isNil "_scriptHandle" && {!scriptDone _scriptHandle}) exitWith {};
-
-  _scriptHandle = [_unit] spawn {
-    params ["_unit"];
-    while {true} do {
-      if (!alive _unit) exitWith {};
-
-      // "Un-leash" the unit if it knows of any nearby hostiles
-      if (
-          {
-            (_x select 3) > 0 // Hostile units
-          } count (_unit nearTargets 30) > 0
-      ) exitWith {
-        _unit enableAI "PATH";
-        _unit doFollow (leader _unit);
-        _unit forceSpeed -1;
-      };
-
-      // Stagger wakeup times so as not to hammer the server all at once
-      sleep (5 + random 1);
-    };
-  };
-
-  _unit setVariable ["holdScriptHandle", _scriptHandle];
-};
-
-{
-	if(_x getVariable "garrisonUnit" == TRUE) then {
-		_x call holdPosition;
-	};
-}forEach allUnits;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
  * Phases Setup
@@ -165,5 +127,58 @@ Liang setVariable ["ace_medical_allowUnconsciousness", true, true];
 
 	missionNamespace setVariable ["allPlayersReady", true, true];
 };
+
+// Updates player lighting variable based on the lighting on the server.
+[] spawn {
+  while {true} do {
+	{
+	  if( !alive _x) then { continue; }; 
+	  _player = _x;
+	  _currentLighting = getLightingAt _player;
+      _player setVariable ["currentLighting", _currentLighting, owner _player];
+	} forEach (allPlayers);
+	sleep 3;
+  };
+};
+
+// Dylans' Garrison script
+holdPosition = {
+  params ["_unit"];
+
+  doStop vehicle _unit;
+  _unit disableAI "PATH";
+
+  private _scriptHandle = _unit getVariable "holdScriptHandle";
+  if (!isNil "_scriptHandle" && {!scriptDone _scriptHandle}) exitWith {};
+
+  _scriptHandle = [_unit] spawn {
+    params ["_unit"];
+    while {true} do {
+      if (!alive _unit) exitWith {};
+
+      // "Un-leash" the unit if it knows of any nearby hostiles
+      if (
+          {
+            (_x select 3) > 0 // Hostile units
+          } count (_unit nearTargets 30) > 0
+      ) exitWith {
+        _unit enableAI "PATH";
+        _unit doFollow (leader _unit);
+        _unit forceSpeed -1;
+      };
+
+      // Stagger wakeup times so as not to hammer the server all at once
+      sleep (5 + random 1);
+    };
+  };
+
+  _unit setVariable ["holdScriptHandle", _scriptHandle];
+};
+//Add the Garrison script to all units
+{
+	if(_x getVariable "garrisonUnit" == TRUE) then {
+		_x call holdPosition;
+	};
+}forEach allUnits;
 
 call startPhase1;
