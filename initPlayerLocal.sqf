@@ -74,7 +74,6 @@ adjustCamo = {
     params ["_unit"];
     _startCamo = player getUnitTrait "camouflageCoef";
     while {true} do {
-	  systemChat "adjust Camo was called.";
       if (!alive _unit) exitWith {};
       //_light = (getLightingAt player) select 3; 
   
@@ -95,16 +94,13 @@ adjustCamo = {
         _lighting = 12.5 max _lighting;
         };
       };
-	  systemChat str (_lighting);
       _modifier = 0.15 + (_lighting * 0.034);  //values should be 1 at 25; 0.5 at 0
 	  
 	  /////
-	  systemChat str (_startCamo * _modifier);
 	  player setUnitTrait ["camouflageCoef", _startCamo * _modifier];
       sleep 3;
     };
   };
 };
 
-systemChat "The code reached here";
 player call adjustCamo;
