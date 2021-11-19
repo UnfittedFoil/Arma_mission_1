@@ -16,7 +16,7 @@
  *   _spawnableSquadLeads: Array of paired units and weights that will be the first(lead) unit spawned for a squad
  *   _totalUnitsPerGroup: Total number of units a squad should posses
  *   _spawnableUnits: Array of paired units and weights that can be spawned in the squad
- *   _marker: Marker defining where to spawn the units
+ *   _location: Coordinates for where the squad should be spawned.
  *   _uniforms: Set of alternate uniforms that units can be spawned with. Can be nil
  *
  * Returns:
@@ -26,7 +26,7 @@
 _spawnGroup = {
 	// initialize basic group (v09.26.21)
 	_group = createGroup [_side, true];
-	private _enemy = _group createUnit [selectRandomWeighted _spawnableSquadLeads, getMarkerPos _marker, [], 5, "NONE"];
+	private _enemy = _group createUnit [selectRandomWeighted _spawnableSquadLeads, _location, [], 5, "NONE"];
 	// Change uniform
 	if !(isNil "_uniforms") then {
 		_enemy forceAddUniform selectRandomWeighted _uniforms;
@@ -34,7 +34,7 @@ _spawnGroup = {
 
 	// Add units to group
 	for "_i" from 2 to _totalUnitsPerGroup do {
-		_enemy = _group createUnit [selectRandomWeighted _spawnableUnits, getMarkerPos _marker, [], 5, "NONE"];
+		_enemy = _group createUnit [selectRandomWeighted _spawnableUnits, _location, [], 5, "NONE"];
 		// Change uniform
 		if !(isNil "_uniforms") then {
 			_enemy forceAddUniform selectRandomWeighted _uniforms;
@@ -67,6 +67,10 @@ _spawnGroup = {
 _proposeSpawnLocation = {
   params ["_players", "_spawnRangeDist", "_spawnRangeAngl"];
   
+  systemChat str _players;
+  systemChat str _spawnRangeDist;
+  systemChat str _spawnRangeAngl;
+  
   //// Find initial average player position
   _totalPos = [0,0];
   _totalPlayers = count _players;
@@ -74,8 +78,8 @@ _proposeSpawnLocation = {
   {
     _player = _x;
     _playerPos = getPos _x;
-    _totalPos set [0, (_totalPos get 0) + (_playerPos select 0)];
-    _totalPos set [1, (_totalPos get 1) + (_playerPos select 1)];	  
+    _totalPos set [0, (_totalPos select 0) + (_playerPos select 0)];
+    _totalPos set [1, (_totalPos select 1) + (_playerPos select 1)];	  
   }forEach _players;
 
   _averagePosStart = _totalPos apply{ _x / _totalPlayers};
@@ -89,8 +93,8 @@ _proposeSpawnLocation = {
   {
     _player = _x;
     _playerPos = getPos _x;
-    _totalPos set [0, (_totalPos get 0) + (_playerPos select 0)];
-    _totalPos set [1, (_totalPos get 1) + (_playerPos select 1)];	  
+    _totalPos set [0, (_totalPos select 0) + (_playerPos select 0)];
+    _totalPos set [1, (_totalPos select 1) + (_playerPos select 1)];	  
   }forEach _players;
     
   _averagePosEnd = _totalPos apply{ _x / _totalPlayers};
@@ -106,12 +110,17 @@ _proposeSpawnLocation = {
   
   //// Determine spawn location based average player position and   
   _spawnDirection = _movementDirection + (random _spawnRangeAngl);
+  
   _spawnDistance = random _spawnRangeDist;
+  //systemChat str _averagePosEnd;
+  systemChat str _spawnDistance;
+  systemChat str _spawnDirection;
+  _spawnLocation = [0, 0];
   _spawnLocation set [0, (_averagePosEnd select 0) + _spawnDistance * sin(_spawnDirection)];
   _spawnLocation set [1, (_averagePosEnd select 1) + _spawnDistance * cos(_spawnDirection)];
   
-  systemChat str _spawnLocation ;
-  _spawnLocation;
+  systemChat "The code reached here!!";
+  _spawnLocation
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -120,8 +129,8 @@ _proposeSpawnLocation = {
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Parameters.
-_spawnDistance = [150, 250];
-_spawnAngle = [-60, 60];
+_spawnDistance = [150, 200, 250];
+_spawnAngle = [-60, 0, 60];
 
 _spawnPoints = [
 				"spawn_marker_1_0",
@@ -175,8 +184,8 @@ _uniforms = [
 {
   // All living players
   _alivePlayers = allPlayers select {alive _x};
-  _marker = [_alivePlayers, _spawnDistance, _spawnAngle] call _proposeSpawnLocation;
-  systemChat _marker;
+  _location = [_alivePlayers, _spawnDistance, _spawnAngle] call _proposeSpawnLocation;
+  systemChat str _location;
   call _spawnGroup;
   sleep 80; //Staggers unit spawns by 80 seconds
 } forEach _spawnPoints;
