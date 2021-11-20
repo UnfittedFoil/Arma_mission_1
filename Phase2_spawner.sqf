@@ -13,44 +13,46 @@
  *
  * Variables used....
  *   _side: side the unit belogs to. Examples keywords, "EAST", "WEST", "Independent".
- *   _spawnableSquadLeads: Array of paired units and weights that will be the first(lead) unit spawned for a squad
- *   _totalUnitsPerGroup: Total number of units a squad should posses
- *   _spawnableUnits: Array of paired units and weights that can be spawned in the squad
+ *   _squadLeads: Array of paired units and weights that will be the first(lead) unit spawned for a squad
+ *   _totalUnits: Total number of units a squad should posses
+ *   _squadUnits: Array of paired units and weights that can be spawned in the squad
  *   _location: Coordinates for where the squad should be spawned.
  *   _uniforms: Set of alternate uniforms that units can be spawned with. Can be nil
  *
  * Returns:
  *   group that has been defined
  */
-
+ 
+// initialize basic group (v11.19.21)
 _spawnGroup = {
-	// initialize basic group (v09.26.21)
-	_group = createGroup [_side, true];
-	private _enemy = _group createUnit [selectRandomWeighted _spawnableSquadLeads, _location, [], 5, "NONE"];
-	// Change uniform
-	if !(isNil "_uniforms") then {
-		_enemy forceAddUniform selectRandomWeighted _uniforms;
-	};
+  params ["_side", "_spawnableSquadLeads", "_totalUnits", "_squadLeads", "_location", "_uniforms"];
+  
+  _group = createGroup [_side, true];
+  private _enemy = _group createUnit [selectRandomWeighted _spawnableSquadLeads, _location, [], 5, "NONE"];
+  // Change uniform
+  if !(isNil "_uniforms") then {
+    _enemy forceAddUniform selectRandomWeighted _uniforms;
+  };
 
-	// Add units to group
-	for "_i" from 2 to _totalUnitsPerGroup do {
-		_enemy = _group createUnit [selectRandomWeighted _spawnableUnits, _location, [], 5, "NONE"];
-		// Change uniform
-		if !(isNil "_uniforms") then {
-			_enemy forceAddUniform selectRandomWeighted _uniforms;
-		};
-	};
+  // Add units to group
+  for "_i" from 2 to _totalUnits do {
+    _enemy = _group createUnit [selectRandomWeighted _squadLeads, _location, [], 5, "NONE"];
+    // Change uniform
+    if !(isNil "_uniforms") then {
+      _enemy forceAddUniform selectRandomWeighted _uniforms;
+    };
+  };
 
-	// Set AI Tasks
-	// Set start tasks (rush towards players)
-	private _wp = _group addWaypoint [position player, 50];
-	_wp setWaypointType "SAD";
-	// Set final task (search for players)
-	_wp = _group addWaypoint [getMarkerPos _wp, 500];
-	_wp setWayPointType "SCRIPTED";
-	_wp setWaypointScript "\z\lambs\addons\wp\scripts\fnc_wpHunt.sqf";
+  // Set AI Tasks
+  // Set start tasks (rush towards players)
+  private _wp = _group addWaypoint [position player, 50];
+  _wp setWaypointType "SAD";
+  // Set final task (search for players)
+  _wp = _group addWaypoint [getMarkerPos _wp, 500];
+  _wp setWayPointType "SCRIPTED";
+  _wp setWaypointScript "\z\lambs\addons\wp\scripts\fnc_wpHunt.sqf";
 
-	_group
+  _group
 };
 
 /* Name: proposeSpawnLocation
@@ -170,7 +172,7 @@ _uniforms = [
 for "_i" from 0 to _spawnedSquads do{
   _alivePlayers = allPlayers select {alive _x};    // All living players
   _location = [_alivePlayers, _spawnDistance, _spawnAngle] call _proposeSpawnLocation;
-  call _spawnGroup;
+  [_side, _spawnableSquadLeads, _totalUnitsPerGroup, _spawnableUnits, _location, _uniforms] call _spawnGroup;
   sleep 80; //Staggers unit spawns by 80 seconds
 };
 
