@@ -67,10 +67,6 @@ _spawnGroup = {
 _proposeSpawnLocation = {
   params ["_players", "_spawnRangeDist", "_spawnRangeAngl"];
   
-  systemChat str _players;
-  systemChat str _spawnRangeDist;
-  systemChat str _spawnRangeAngl;
-  
   //// Find initial average player position
   _totalPos = [0,0];
   _totalPlayers = count _players;
@@ -109,17 +105,13 @@ _proposeSpawnLocation = {
   };
   
   //// Determine spawn location based average player position and   
-  _spawnDirection = _movementDirection + (random _spawnRangeAngl);
-  
+  _spawnDirection = _movementDirection + (random _spawnRangeAngl);  
   _spawnDistance = random _spawnRangeDist;
-  //systemChat str _averagePosEnd;
-  systemChat str _spawnDistance;
-  systemChat str _spawnDirection;
+
   _spawnLocation = [0, 0];
   _spawnLocation set [0, (_averagePosEnd select 0) + _spawnDistance * sin(_spawnDirection)];
   _spawnLocation set [1, (_averagePosEnd select 1) + _spawnDistance * cos(_spawnDirection)];
   
-  systemChat "The code reached here!!";
   _spawnLocation
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -129,16 +121,10 @@ _proposeSpawnLocation = {
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Parameters.
+_spawnedSquads = 5;
 _spawnDistance = [150, 200, 250];
 _spawnAngle = [-60, 0, 60];
 
-_spawnPoints = [
-				"spawn_marker_1_0",
-				"spawn_marker_1_1",
-				"spawn_marker_1_2",
-				"spawn_marker_1_3",
-				"spawn_marker_1_4"
-];
 _side = independent;
 _totalUnitsPerGroup = 6;
 _spawnableSquadLeads= ["I_C_Soldier_Bandit_6_F", 1]; //// UGL
@@ -181,14 +167,12 @@ _uniforms = [
 } forEach _spawnPoints;
 */
 
-{
-  // All living players
-  _alivePlayers = allPlayers select {alive _x};
+for "_i" from 0 to _spawnedSquads do{
+  _alivePlayers = allPlayers select {alive _x};    // All living players
   _location = [_alivePlayers, _spawnDistance, _spawnAngle] call _proposeSpawnLocation;
-  systemChat str _location;
   call _spawnGroup;
   sleep 80; //Staggers unit spawns by 80 seconds
-} forEach _spawnPoints;
+};
 
 sleep 80;  // 8 minutes for spawning group, total of 8 minutes since the start
 
@@ -199,12 +183,10 @@ sleep 80;  // 8 minutes for spawning group, total of 8 minutes since the start
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Parameters
-_spawnPoints = [
-				"spawn_marker_2_0",
-				"spawn_marker_2_1",
-				"spawn_marker_2_2",
-				"spawn_marker_2_3"
-];
+_spawnedSquads = 4;
+_spawnDistance = [150, 200, 250];
+_spawnAngle = [-60, 0, 60];
+
 _totalUnitsPerGroup = 8;
 _spawnableSquadLeads= ["I_C_Soldier_Bandit_6_F", 1]; // UGL
 _spawnableUnits = [
@@ -214,11 +196,12 @@ _spawnableUnits = [
 					"I_C_Soldier_Bandit_7_F", 35  // Rifleman
 ];
 // Wave 2 spawn
-{
-  _marker = _x;
+for "_i" from 0 to _spawnedSquads do{
+  _alivePlayers = allPlayers select {alive _x};    // All living players
+  _location = [_alivePlayers, _spawnDistance, _spawnAngle] call _proposeSpawnLocation;
   call _spawnGroup;
   sleep 120; //Staggers unit spawns by 2 minutes each
-} forEach _spawnPoints;
+};
 
 sleep 90; // 9.5 minutes from previous group, 17.5 minutes from start
 
@@ -229,11 +212,10 @@ sleep 90; // 9.5 minutes from previous group, 17.5 minutes from start
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Parameters
-_spawnPoints = [
-				"spawn_marker_3_0",
-				"spawn_marker_3_1",
-				"spawn_marker_3_2"
-];
+_spawnedSquads = 3;
+_spawnDistance = [150, 200, 250];
+_spawnAngle = [-60, 0, 60];
+
 _totalUnitsPerGroup = 12;
 _spawnableSquadLeads= ["I_C_Soldier_Para_4_F", 1]; // Machine Gunner
 _spawnableUnits = [
@@ -248,10 +230,11 @@ _spawnableUnits = [
 _uniforms = nil;
 
 // Wave 3 spawn
-{
-  _marker = _x;
+for "_i" from 0 to _spawnedSquads do{
+  _alivePlayers = allPlayers select {alive _x};    // All living players
+  _location = [_alivePlayers, _spawnDistance, _spawnAngle] call _proposeSpawnLocation;
   call _spawnGroup;
   sleep 100
-} forEach _spawnPoints;
+};
 
 sleep 0; // 5 minutes from previous group, 22.5 from start
