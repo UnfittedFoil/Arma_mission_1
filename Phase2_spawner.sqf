@@ -123,12 +123,12 @@ _proposeSpawnLocation = {
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Parameters.
-_spawnedSquads = 5;
-_spawnDistance = [150, 200, 250];
-_spawnAngle = [-60, 0, 60];
+_spawnedSquads = 8;
+_spawnDistance = [140, 150, 160];
+_spawnAngle = [-20, 0, 20];
 
 _side = independent;
-_totalUnitsPerGroup = 6;
+_totalUnitsPerGroup = 4;
 _spawnableSquadLeads= ["I_C_Soldier_Bandit_6_F", 1]; //// UGL
 _spawnableUnits = [
 					"I_C_Soldier_Bandit_4_F", 50, // Rifleman
@@ -165,7 +165,7 @@ _uniforms = [
 {
   _marker = _x;
   call _spawnGroup;
-  sleep 80; //Staggers unit spawns by 80 seconds
+  sleep 50; //Staggers unit spawns by 80 seconds
 } forEach _spawnPoints;
 */
 
@@ -173,7 +173,7 @@ for "_i" from 0 to _spawnedSquads do{
   _alivePlayers = allPlayers select {alive _x};    // All living players
   _location = [_alivePlayers, _spawnDistance, _spawnAngle] call _proposeSpawnLocation;
   [_side, _spawnableSquadLeads, _totalUnitsPerGroup, _spawnableUnits, _location, _uniforms] call _spawnGroup;
-  sleep 80; //Staggers unit spawns by 80 seconds
+  sleep 50; //Staggers unit spawns by 80 seconds
 };
 
 sleep 80;  // 8 minutes for spawning group, total of 8 minutes since the start
