@@ -123,7 +123,7 @@ _proposeSpawnLocation = {
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Parameters.
-_spawnedSquads = 8;
+_spawnedSquads = 5;
 _spawnDistance = [140, 150, 160];
 _spawnAngle = [-20, 0, 20];
 
@@ -165,28 +165,61 @@ _uniforms = [
 {
   _marker = _x;
   call _spawnGroup;
-  sleep 50; //Staggers unit spawns by 80 seconds
+  sleep 30; //Staggers unit spawns by 80 seconds
 } forEach _spawnPoints;
 */
 
 for "_i" from 0 to _spawnedSquads do{
   _alivePlayers = allPlayers select {alive _x};    // All living players
+  // Exit if the players have left the area
+  if !(_alivePlayers findIf {(_x inArea Pyrgos_Area)} == 0) exitWith {
+    systemChat "Players have left the Pyrgos_Area";
+  };
+  
   _location = [_alivePlayers, _spawnDistance, _spawnAngle] call _proposeSpawnLocation;
   [_side, _spawnableSquadLeads, _totalUnitsPerGroup, _spawnableUnits, _location, _uniforms] call _spawnGroup;
   sleep 50; //Staggers unit spawns by 80 seconds
 };
 
-sleep 80;  // 8 minutes for spawning group, total of 8 minutes since the start
+sleep 30;  // 3 minutes for spawning group, total of 8 minutes since the start
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
  * Wave 2
+ * Light quick reacting wave
+*/
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Parameters
+_spawnedSquads = 5;
+_spawnDistance = [150, 200, 250];
+_spawnAngle = [-40, 0, 40];
+
+_totalUnitsPerGroup = 6;
+
+// Wave 2 spawn
+for "_i" from 0 to _spawnedSquads do{
+  _alivePlayers = allPlayers select {alive _x};    // All living players
+  // Exit if the players have left the area
+  if !(_alivePlayers findIf {(_x inArea Pyrgos_Area)} == 0) exitWith {
+    systemChat "Players have left the Pyrgos_Area";
+  };
+  
+  _location = [_alivePlayers, _spawnDistance, _spawnAngle] call _proposeSpawnLocation;
+  call _spawnGroup;
+  sleep 50; //Staggers unit spawns by 2 minutes each
+};
+
+sleep 50;  // 8 minutes for spawning group, total of 8 minutes since the start
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+ * Wave 3
  * Moderate testing force
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Parameters
 _spawnedSquads = 4;
-_spawnDistance = [150, 200, 250];
+_spawnDistance = [200, 250, 300];
 _spawnAngle = [-60, 0, 60];
 
 _totalUnitsPerGroup = 8;
@@ -200,6 +233,11 @@ _spawnableUnits = [
 // Wave 2 spawn
 for "_i" from 0 to _spawnedSquads do{
   _alivePlayers = allPlayers select {alive _x};    // All living players
+  // Exit if the players have left the area
+  if !(_alivePlayers findIf {(_x inArea Pyrgos_Area)} == 0) exitWith {
+    systemChat "Players have left the Pyrgos_Area";
+  };
+  
   _location = [_alivePlayers, _spawnDistance, _spawnAngle] call _proposeSpawnLocation;
   call _spawnGroup;
   sleep 120; //Staggers unit spawns by 2 minutes each
@@ -209,14 +247,13 @@ sleep 90; // 9.5 minutes from previous group, 17.5 minutes from start
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
- * Wave 3
+ * Wave 4
  * Scary heavily armed counter
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 // Parameters
 _spawnedSquads = 3;
-_spawnDistance = [150, 200, 250];
-_spawnAngle = [-60, 0, 60];
+
 
 _totalUnitsPerGroup = 12;
 _spawnableSquadLeads= ["I_C_Soldier_Para_4_F", 1]; // Machine Gunner
@@ -234,6 +271,11 @@ _uniforms = nil;
 // Wave 3 spawn
 for "_i" from 0 to _spawnedSquads do{
   _alivePlayers = allPlayers select {alive _x};    // All living players
+  // Exit if the players have left the area
+  if !(_alivePlayers findIf {(_x inArea Pyrgos_Area)} == 0) exitWith {
+    systemChat "Players have left the Pyrgos_Area";
+  };
+  
   _location = [_alivePlayers, _spawnDistance, _spawnAngle] call _proposeSpawnLocation;
   call _spawnGroup;
   sleep 100

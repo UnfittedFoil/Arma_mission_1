@@ -1,0 +1,7 @@
+High Priority:
+Give players an end mission screen on completion
+  Ensure that success, failure, and wipe have different completion screens
+  Ensure that mission end is called on players.
+Medium Priority:
+  Alter proposeSpawnLocation to guarentee players won't see spawn location.
+  Remove debuging text in Phase2_spawner during wave spawning.
