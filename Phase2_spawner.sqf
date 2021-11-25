@@ -25,7 +25,14 @@
  
 // initialize basic group (v11.19.21)
 _spawnGroup = {
-  params ["_side", "_spawnableSquadLeads", "_totalUnits", "_squadLeads", "_location", "_uniforms"];
+  params [
+    ["_side"], 
+	["_spawnableSquadLeads"], 
+	["_totalUnits"], 
+	["_squadLeads"], 
+	["_location"], 
+	["_uniforms", nil, [objNull]]
+	];
   
   _group = createGroup [_side, true];
   private _enemy = _group createUnit [selectRandomWeighted _spawnableSquadLeads, _location, [], 5, "NONE"];
@@ -106,7 +113,7 @@ _proposeSpawnLocation = {
     _movementDirection = _movementDirection + 180;
   };
   
-  //// Determine spawn location based average player position and direction. If the spot is visibile reroll. If no spot is found after 50 attempts, give up.
+  //// Determine spawn location based average player position and direction. If the spot is visibile reroll. If no spot is found after 50 attempts, use the last one. (Yes bad, but a better system requires more loops)
   _spawnLocation = [0, 0];
   for "_i" from 0 to 50 do{
   
@@ -284,7 +291,7 @@ for "_i" from 0 to _spawnedSquads do{
   };
   
   _location = [_alivePlayers, _spawnDistance, _spawnAngle] call _proposeSpawnLocation;
-  [_side, _spawnableSquadLeads, _totalUnitsPerGroup, _spawnableUnits, _location, _uniforms] call _spawnGroup;
+  [_side, _spawnableSquadLeads, _totalUnitsPerGroup, _spawnableUnits, _location, nil] call _spawnGroup;
   sleep 100
 };
 
