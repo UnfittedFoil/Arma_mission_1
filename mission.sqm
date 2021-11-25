@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={16890.082,630.47156,12295.633};
-		dir[]={0.052821752,-0.86863744,0.49262443};
-		up[]={0.092608973,0.49544829,0.86368668};
-		aside[]={0.99430054,0,-0.10661407};
+		pos[]={16676.945,452.0119,12748.764};
+		dir[]={-0.04176949,-0.9911015,0.12639073};
+		up[]={-0.31099561,0.13310102,0.94104475};
+		aside[]={0.94949406,1.6880222e-009,0.31378773};
 	};
 };
 binarizationWanted=0;
@@ -478,7 +478,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=47;
+		items=46;
 		class Item0
 		{
 			dataType="Group";
@@ -5003,6 +5003,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						isPlayer=1;
 						isPlayable=1;
 						class Inventory
 						{
@@ -7654,79 +7655,6 @@ class Mission
 		class Item43
 		{
 			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={16638.4,23.000381,12800.05};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						isPlayer=1;
-					};
-					id=460;
-					type="O_Soldier_F";
-					atlOffset=1.9073486e-006;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male03PER";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.05;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=459;
-			atlOffset=1.9073486e-006;
-		};
-		class Item44
-		{
-			dataType="Group";
 			side="West";
 			class Entities
 			{
@@ -7812,7 +7740,7 @@ class Mission
 			};
 			id=463;
 		};
-		class Item45
+		class Item44
 		{
 			dataType="Group";
 			side="West";
@@ -8018,7 +7946,7 @@ class Mission
 			id=464;
 			atlOffset=0.00037193298;
 		};
-		class Item46
+		class Item45
 		{
 			dataType="Trigger";
 			position[]={16652.801,15.89785,12689.601};
