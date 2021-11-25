@@ -212,7 +212,7 @@ for "_i" from 0 to _spawnedSquads do{
   };
   
   _location = [_alivePlayers, _spawnDistance, _spawnAngle] call _proposeSpawnLocation;
-  call _spawnGroup;
+  [_side, _spawnableSquadLeads, _totalUnitsPerGroup, _spawnableUnits, _location, _uniforms] call _spawnGroup;
   sleep 50; //Staggers unit spawns by 2 minutes each
 };
 
@@ -246,7 +246,7 @@ for "_i" from 0 to _spawnedSquads do{
   };
   
   _location = [_alivePlayers, _spawnDistance, _spawnAngle] call _proposeSpawnLocation;
-  call _spawnGroup;
+  [_side, _spawnableSquadLeads, _totalUnitsPerGroup, _spawnableUnits, _location, _uniforms] call _spawnGroup;
   sleep 120; //Staggers unit spawns by 2 minutes each
 };
 
@@ -284,7 +284,7 @@ for "_i" from 0 to _spawnedSquads do{
   };
   
   _location = [_alivePlayers, _spawnDistance, _spawnAngle] call _proposeSpawnLocation;
-  call _spawnGroup;
+  [_side, _spawnableSquadLeads, _totalUnitsPerGroup, _spawnableUnits, _location, _uniforms] call _spawnGroup;
   sleep 100
 };
 
