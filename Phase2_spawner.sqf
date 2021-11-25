@@ -9,7 +9,7 @@
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 /* Name: spawnGroup
- * Description: Creates groups of enemies at defined spawn points spawn points and sends groups towards players
+ * Description: Creates groups of enemies at provided location and sends groups towards players
  *
  * Variables used....
  *   _side: side the unit belogs to. Examples keywords, "EAST", "WEST", "Independent".
@@ -68,7 +68,8 @@ _spawnGroup = {
  */
 _proposeSpawnLocation = {
   params ["_players", "_spawnRangeDist", "_spawnRangeAngl"];
-  
+  // Visibility Threshold for if a player can see a location
+  visibilityThreshold = 0.2; // 1 is fully visible, 0 is presumbly not visible. This needs play testing to determine.
   //// Find initial average player position
   _totalPos = [0,0];
   _totalPlayers = count _players;
@@ -84,7 +85,6 @@ _proposeSpawnLocation = {
   
   //// Find average player position 5 seconds later
   sleep 5;
-    
   _totalPos = [0,0];
   _totalPlayers = count _players;
     
@@ -106,14 +106,28 @@ _proposeSpawnLocation = {
     _movementDirection = _movementDirection + 180;
   };
   
-  //// Determine spawn location based average player position and   
-  _spawnDirection = _movementDirection + (random _spawnRangeAngl);  
-  _spawnDistance = random _spawnRangeDist;
-
+  //// Determine spawn location based average player position and direction. If the spot is visibile reroll. If no spot is found after 50 attempts, give up.
   _spawnLocation = [0, 0];
-  _spawnLocation set [0, (_averagePosEnd select 0) + _spawnDistance * sin(_spawnDirection)];
-  _spawnLocation set [1, (_averagePosEnd select 1) + _spawnDistance * cos(_spawnDirection)];
+  for "_i" from 0 to 50 do{
   
+    _spawnDirection = _movementDirection + (random _spawnRangeAngl);  
+    _spawnDistance = random _spawnRangeDist;
+  
+    _spawnLocation set [0, (_averagePosEnd select 0) + _spawnDistance * sin(_spawnDirection)];
+    _spawnLocation set [1, (_averagePosEnd select 1) + _spawnDistance * cos(_spawnDirection)];
+    
+    //check if spawn location is visible
+    _visible = false;
+    {
+	  systemChat str (_spawnLocation + [0]);
+	  _visibleToPlayer = (([objNull, "VIEW"] checkVisibility [eyepos _x, ATLToASL (_spawnLocation + [0])]) > visibilityThreshold);
+	  
+	  // Way of saying the position is visible if it was visible to this player or a previous player
+	  _visible = _visible || _visibleToPlayer;
+	  
+    }forEach _players;
+    if !(_visible) then {break};
+  };
   _spawnLocation
 };
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -161,13 +175,6 @@ _uniforms = [
 				"U_I_L_Uniform_01_tshirt_sport_F", 1
 ];
 // Wave 1 spawn
-/*
-{
-  _marker = _x;
-  call _spawnGroup;
-  sleep 30; //Staggers unit spawns by 80 seconds
-} forEach _spawnPoints;
-*/
 
 for "_i" from 0 to _spawnedSquads do{
   _alivePlayers = allPlayers select {alive _x};    // All living players
