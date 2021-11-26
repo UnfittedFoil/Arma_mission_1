@@ -7,19 +7,19 @@ if !(isServer) exitWith {};	 // Runs only once, and only on the server
 
 _setBriefing = {
 	_situation = "
-					Outrage over the Altis government's efforts to crackdown on civil disobedience resulting from recent changes to local trade laws has resulted in an insurgence. The first large scale attack launched by the insurgents was the raid of Kalithea port almost a year ago. Six months following the raid, NATO officially backed the Altis government and deployed a small contingent of troops to assist in peacekeeping. Most of these troops were deployed to Gravia air base and the area around due to its central location on the island.
+					Outrage over the Altis government's recent changes in law has and the efforts to enforce them has resulted in an armed conflict in Altis. The fighting has been between the government of Altis, and the recently created reformist faction. Six months ago, the fighting began escalating drastically, causing NATO to officially step in to back the Altis government. To assist, NATO has deployed a small contingent of troops to assist in peacekeeping. Most of these troops were deployed to Gravia air base and the area around due to its central location on the island.
 					<br/>
 					<br/>
-					We have been contracted to recover a man by the name Liang Ng from NATO custody. Our contact believes that Liang Ng is currently being held in a NATO controlled compound in the city of Pyrgos,  this has been confirmed by the observation team. To our knowledge these are the only NATO soldiers in Pyrgos.
+					We have been contracted to recover a man by the name Liang Ng from NATO custody. Our contact believes that Liang Ng is currently being held in a NATO controlled compound in the city of Pyrgos, and this has been confirmed by our observation team. To our knowledge these are the only NATO soldiers in the Pyrgos area.
 					<br/>
 					<br/>
-					Liang Ng is an infamous smuggler in the area, and had been a primary source of military equipment for the insurgents. NATO learned of his involvement with the insurgents and ambushed Liang during one of his deals. NATO likely plans to move Liang off island to distance him from any potential help.
+					Liang Ng is an infamous smuggler in the area, and had been a primary source of military equipment for the reformist. NATO learned of his involvement with the reformist and lured Liang into a trap. Based on recent movements and similar incidents, we believe NATO likely plans to move Liang off island to distance him from any potential help.
 					<br/>
 					<br/>
-					Initial observations of the facility found that there are around 20 nato guards, and the scouting team found an unattended package containing a few NATO MXs and 6.5mm ammo. The package also contained a few grenade launchers which is perfect since the intern Gary sourced 40mm HE grenade rounds instead of the requested v40 grenades.
+					Initial observations of the facility found that there are around 20 nato guards, and the scouting team found an unattended package containing a few NATO MXs and 6.5mm ammo. The package also contained a few grenade launchers which is perfect since our recently hired intern Gary sourced 40mm HE grenade rounds instead of the v40 grenades.
 					<br/>
 					<br/>
-					As predicted by our contact and confirmed by Gary, as of 22:12, NATO forces at the airport are being distracted by something. This will be our best opportunity to retrieve the hostage.
+					As predicted by our contact and confirmed by Gary, as of 22:12, NATO forces at the airport are being occupied by something. This will be our best opportunity to retrieve the hostage.
 				 ";
 	_mission = "
 					Retrieve Liang Ng from NATO custody at mark <marker name =""marker_23"">NATO Compound</marker>and return him back to <marker name=""marker_25"">Base</marker>. Try to avoid civilian casualties. In the event something happens to the vehicles, alternate extraction has been prepared <marker name=""marker_27"">KamAZ Transport</marker>
