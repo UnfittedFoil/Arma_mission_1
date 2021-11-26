@@ -14,3 +14,20 @@ class Header
   minPlayers=1;
   maxPlayers=11;
 };
+
+class CfgDebriefing
+{
+  // Used when Liang Ng has been rescued successfully
+  class MissionComplete
+  {
+    title = "Mission Complete";
+    description = "Liang NG has been successfully recovered, our contact will be pleased. It is interesting though that it was not NATO who came to stop us. We can only wonder as to the identity of the other party and more importantly why they got involved.";
+  };
+  
+  // Used when Liang Ng has been killed, but the RTB objective was completed
+  class MissionFailed
+  {
+    title = "Mission Failed; no we won't get them next time, they're dead.";
+    description = "You had 1 job. We spent days preparing, devoted a significant portion of our assets, risked actually getting NATO's attention, and risked all of your lives, but now we have 0 chance of recovering the hostage. At least this wasn't a total wipe";
+  };
+};

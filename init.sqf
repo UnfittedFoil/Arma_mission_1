@@ -6,34 +6,34 @@
 if !(isServer) exitWith {};	 // Runs only once, and only on the server
 
 _setBriefing = {
-	_situation = "
-					Outrage over the Altis government's recent changes in law has and the efforts to enforce them has resulted in an armed conflict in Altis. The fighting has been between the government of Altis, and the recently created reformist faction. Six months ago, the fighting began escalating drastically, causing NATO to officially step in to back the Altis government. To assist, NATO has deployed a small contingent of troops to assist in peacekeeping. Most of these troops were deployed to Gravia air base and the area around due to its central location on the island.
-					<br/>
-					<br/>
-					We have been contracted to recover a man by the name Liang Ng from NATO custody. Our contact believes that Liang Ng is currently being held in a NATO controlled compound in the city of Pyrgos, and this has been confirmed by our observation team. To our knowledge these are the only NATO soldiers in the Pyrgos area.
-					<br/>
-					<br/>
-					Liang Ng is an infamous smuggler in the area, and had been a primary source of military equipment for the reformist. NATO learned of his involvement with the reformist and lured Liang into a trap. Based on recent movements and similar incidents, we believe NATO likely plans to move Liang off island to distance him from any potential help.
-					<br/>
-					<br/>
-					Initial observations of the facility found that there are around 20 nato guards, and the scouting team found an unattended package containing a few NATO MXs and 6.5mm ammo. The package also contained a few grenade launchers which is perfect since our recently hired intern Gary sourced 40mm HE grenade rounds instead of the v40 grenades.
-					<br/>
-					<br/>
-					As predicted by our contact and confirmed by Gary, as of 22:12, NATO forces at the airport are being occupied by something. This will be our best opportunity to retrieve the hostage.
-				 ";
-	_mission = "
-					Retrieve Liang Ng from NATO custody at mark <marker name =""marker_23"">NATO Compound</marker>and return him back to <marker name=""marker_25"">Base</marker>. Try to avoid civilian casualties. In the event something happens to the vehicles, alternate extraction has been prepared <marker name=""marker_27"">KamAZ Transport</marker>
-				";
-	_execution = "
-					<br/>
-					1) Retrieve the Liang and ensure his compliance.
-					<br/>
-					2. Return to base with the Liang.	
-				";
+  _situation = "
+                Outrage over the Altis government's recent changes in law has and the efforts to enforce them has resulted in an armed conflict in Altis. The fighting has been between the government of Altis, and the recently created reformist faction. Six months ago, the fighting began escalating drastically, causing NATO to officially step in to back the Altis government. To assist, NATO has deployed a small contingent of troops to assist in peacekeeping. Most of these troops were deployed to Gravia air base and the area around due to its central location on the island.
+                <br/>
+                <br/>
+                We have been contracted to recover a man by the name Liang Ng from NATO custody. Our contact believes that Liang Ng is currently being held in a NATO controlled compound in the city of Pyrgos, and this has been confirmed by our observation team. To our knowledge these are the only NATO soldiers in the Pyrgos area.
+                <br/>
+                <br/>
+                Liang Ng is an infamous smuggler in the area, and had been a primary source of military equipment for the reformist. NATO learned of his involvement with the reformist and lured Liang into a trap. Based on recent movements and similar incidents, we believe NATO likely plans to move Liang off island to distance him from any potential help.
+                <br/>
+                <br/>
+                Initial observations of the facility found that there are around 20 nato guards, and the scouting team found an unattended package containing a few NATO MXs and 6.5mm ammo. The package also contained a few grenade launchers which is perfect since our recently hired intern Gary sourced 40mm HE grenade rounds instead of the v40 grenades.
+                <br/>
+                <br/>
+                As predicted by our contact and confirmed by Gary, as of 22:12, NATO forces at the airport are being occupied by something. This will be our best opportunity to retrieve the hostage.
+               ";
+  _mission = "
+                Retrieve Liang Ng from NATO custody at mark <marker name =""marker_23"">NATO Compound</marker>and return him back to <marker name=""marker_25"">Base</marker>. Try to avoid civilian casualties. In the event something happens to the vehicles, alternate extraction has been prepared <marker name=""marker_27"">KamAZ Transport</marker>
+               ";
+  _execution = "
+                <br/>
+                1) Retrieve the Liang and ensure his compliance.
+                <br/>
+                2. Return to base with the Liang.	
+               ";
 
-	_x createDiaryRecord ["Diary", ["Execution", _execution]];
-	_x createDiaryRecord ["Diary", ["Mission", _mission]];
-	_x createDiaryRecord ["Diary", ["Situtation", _situation]];
+  _x createDiaryRecord ["Diary", ["Execution", _execution]];
+  _x createDiaryRecord ["Diary", ["Mission", _mission]];
+  _x createDiaryRecord ["Diary", ["Situtation", _situation]];
 };
 
 _setBriefing forEach allPlayers;
@@ -55,7 +55,7 @@ startPhase1 = {
 startPhase2 = {
 	["tsk1", "SUCCEEDED"] call BIS_fnc_taskSetState;
 	_taskDescription = "Bring Liang Ng back to base. No need to remove the handcuffs.";
-	[true, "tsk2", [_taskDescription, "return with Liang Ng", "Liang_Room"], "Liang_Room"] call BIS_fnc_taskCreate;
+	[true, "tsk2", [_taskDescription, "Return with Liang Ng", "Liang_Room"], "Liang_Room"] call BIS_fnc_taskCreate;
 	[] execVM "Phase2_spawner.sqf";
 };
 
@@ -89,12 +89,20 @@ startPhase3 = {
 
 // close out the mission
 closeOut = {
-	// Ending dependent on if Liang lived
-	_handle = [] spawn {
-		_win = "tsk2" call BIS_fnc_taskCompleted;
-		sleep 8;
-		["temp1", _win, true, _win] call BIS_fnc_endMission;
-	}
+  // Ending dependent on if Liang lived
+  _handle = [] spawn {
+    _win = "tsk2" call BIS_fnc_taskState;
+	systemChat str _win;
+    sleep 8;
+    if(_win == "SUCCEEDED") then {
+      ["MissionComplete", true, 3, true] remoteExec ["BIS_fnc_endMission", 0, true];
+      systemChat "Mission Complete";
+    }
+    else{
+      ["MissionFailed", false, 3, false] remoteExec ["BIS_fnc_endMission", 0, true];
+      systemChat "Mission Failed";
+    };
+  };
 };
 
 
@@ -107,28 +115,27 @@ closeOut = {
 
 // This will be added to the JIP queue, and removed if Liang is deleted
 {
-	waitUntil { !isNil "ace_interact_menu_fnc_removeActionFromClass" };
-	{
-		[typeOf Liang, 0, _x] call ace_interact_menu_fnc_removeActionFromClass;
-	} forEach [
-		["ACE_MainActions", "ACE_RemoveHandcuffs"],
-		["ACE_MainActions", "ACE_TeamManagement", "ACE_GetDown"],
-		["ACE_MainActions", "ACE_TeamManagement", "ACE_SendAway"]
-	];
+  waitUntil { !isNil "ace_interact_menu_fnc_removeActionFromClass" };
+  {
+    [typeOf Liang, 0, _x] call ace_interact_menu_fnc_removeActionFromClass;
+  } forEach [
+    ["ACE_MainActions", "ACE_RemoveHandcuffs"],
+    ["ACE_MainActions", "ACE_TeamManagement", "ACE_GetDown"],
+    ["ACE_MainActions", "ACE_TeamManagement", "ACE_SendAway"]
+  ];
 } remoteExec ["call", 0, Liang];
 
 Liang setVariable ["ace_medical_allowUnconsciousness", true, true];
 
 [] spawn {
-	waitUntil {
-		allPlayers findIf {
-			!(_x getVariable ["playerReady", false])
-		} == -1 && {
-			getClientStateNumber > 9
-		};
-	};
-
-	missionNamespace setVariable ["allPlayersReady", true, true];
+  waitUntil {
+    allPlayers findIf {
+      !(_x getVariable ["playerReady", false])
+    } == -1 && {
+      getClientStateNumber > 9
+    };
+  };
+  missionNamespace setVariable ["allPlayersReady", true, true];
 };
 
 // Updates player lighting variable based on the lighting on the server.
@@ -179,9 +186,9 @@ holdPosition = {
 };
 //Add the Garrison script to all units
 {
-	if(_x getVariable "garrisonUnit" == TRUE) then {
-		_x call holdPosition;
-	};
+  if(_x getVariable "garrisonUnit" == TRUE) then {
+    _x call holdPosition;
+  };
 }forEach allUnits;
 
 call startPhase1;
