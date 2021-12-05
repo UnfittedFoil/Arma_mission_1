@@ -13,7 +13,7 @@
  *
  * Variables used....
  *   _side: side the unit belogs to. Examples keywords, "EAST", "WEST", "Independent".
- *   _squadLeads: Array of paired units and weights that will be the first(lead) unit spawned for a squad
+ *   _spawnableSquadLeads: Array of paired units and weights that will be the first(lead) unit spawned for a squad
  *   _totalUnits: Total number of units a squad should posses
  *   _squadUnits: Array of paired units and weights that can be spawned in the squad
  *   _location: Coordinates for where the squad should be spawned.
@@ -23,16 +23,9 @@
  *   group that has been defined
  */
  
-// initialize basic group (v11.19.21)
+// initialize basic group (v12.2.21)
 _spawnGroup = {
-  params [
-    ["_side"], 
-	["_spawnableSquadLeads"], 
-	["_totalUnits"], 
-	["_squadLeads"], 
-	["_location"], 
-	["_uniforms", nil, [objNull]]
-	];
+  params ["_side", "_spawnableSquadLeads", "_totalUnits", "_squadUnits", "_location", "_uniforms"];
   
   _group = createGroup [_side, true];
   private _enemy = _group createUnit [selectRandomWeighted _spawnableSquadLeads, _location, [], 5, "NONE"];
@@ -43,7 +36,7 @@ _spawnGroup = {
 
   // Add units to group
   for "_i" from 2 to _totalUnits do {
-    _enemy = _group createUnit [selectRandomWeighted _squadLeads, _location, [], 5, "NONE"];
+    _enemy = _group createUnit [selectRandomWeighted _squadUnits, _location, [], 5, "NONE"];
     // Change uniform
     if !(isNil "_uniforms") then {
       _enemy forceAddUniform selectRandomWeighted _uniforms;
@@ -118,10 +111,11 @@ _proposeSpawnLocation = {
   for "_i" from 0 to 50 do{
   
     _spawnDirection = _movementDirection + (random _spawnRangeAngl);  
-    _spawnDistance = random _spawnRangeDist;
+	_spawnDist = random _spawnRangeDist;
   
-    _spawnLocation set [0, (_averagePosEnd select 0) + _spawnDistance * sin(_spawnDirection)];
-    _spawnLocation set [1, (_averagePosEnd select 1) + _spawnDistance * cos(_spawnDirection)];
+	
+    _spawnLocation set [0, (_averagePosEnd select 0) + _spawnDist * sin(_spawnDirection)];
+    _spawnLocation set [1, (_averagePosEnd select 1) + _spawnDist * cos(_spawnDirection)];
     
     //check if spawn location is visible
     _visible = false;
