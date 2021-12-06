@@ -126,6 +126,9 @@ closeOut = {
 } remoteExec ["call", 0, Liang];
 
 Liang setVariable ["ace_medical_allowUnconsciousness", true, true];
+Liang setVariable ["ace_medical_damageThreshold", 32 * ace_medical_playerDamageThreshold, true];
+
+
 
 [] spawn {
   waitUntil {
