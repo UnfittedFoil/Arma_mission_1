@@ -1,0 +1,13 @@
+Left to test:
+  Does mission end screen show up for other players?
+  Does players being spread out make spawning weird?
+  Is Phase 1 challenging for (~6) players to assault?
+  Is Phase 2 reasonable for (~6) players to fend off?
+  Does the enemy assault in Phase 2 stop when all or 1 player leaves the AO?
+  Is the hostage's questionable mortality due to server settings?
+  Is lightBasedCamo properly tuned?
+
+Has been tested:
+
+Weird Features:
+If Liang gets killed before he is found, then players can progress without finding him. \
