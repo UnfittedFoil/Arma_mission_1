@@ -180,7 +180,7 @@ _uniforms = [
 for "_i" from 0 to _spawnedSquads do{
   _alivePlayers = allPlayers select {alive _x};    // All living players
   // Exit if the players have left the area
-  if !(_alivePlayers findIf {(_x inArea Pyrgos_Area)} == 0) exitWith {
+  if (_alivePlayers findIf {(_x inArea Pyrgos_Area)} == -1) exitWith {
     systemChat "Players have left the Pyrgos_Area";
   };
   
@@ -208,7 +208,7 @@ _totalUnitsPerGroup = 6;
 for "_i" from 0 to _spawnedSquads do{
   _alivePlayers = allPlayers select {alive _x};    // All living players
   // Exit if the players have left the area
-  if !(_alivePlayers findIf {(_x inArea Pyrgos_Area)} == 0) exitWith {
+  if (_alivePlayers findIf {(_x inArea Pyrgos_Area)} == -1) exitWith {
     systemChat "Players have left the Pyrgos_Area";
   };
   
@@ -242,7 +242,7 @@ _spawnableUnits = [
 for "_i" from 0 to _spawnedSquads do{
   _alivePlayers = allPlayers select {alive _x};    // All living players
   // Exit if the players have left the area
-  if !(_alivePlayers findIf {(_x inArea Pyrgos_Area)} == 0) exitWith {
+  if (_alivePlayers findIf {(_x inArea Pyrgos_Area)} == -1) exitWith {
     systemChat "Players have left the Pyrgos_Area";
   };
   
@@ -280,7 +280,7 @@ _uniforms = nil;
 for "_i" from 0 to _spawnedSquads do{
   _alivePlayers = allPlayers select {alive _x};    // All living players
   // Exit if the players have left the area
-  if !(_alivePlayers findIf {(_x inArea Pyrgos_Area)} == 0) exitWith {
+  if (_alivePlayers findIf {(_x inArea Pyrgos_Area)} == -1) exitWith {
     systemChat "Players have left the Pyrgos_Area";
   };
   
