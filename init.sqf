@@ -163,4 +163,14 @@ civDeathCounter = 0;
   civDeathCounter = civDeathCounter + 1;
 }] call CBA_fnc_addClassEventHandler;
 
+// Allow Zeus to edit stuff
+[] spawn {
+    while { true } do {
+        {
+            _x addCuratorEditableObjects [entities [[], ["Logic"], true, true], true];
+        } forEach allCurators;
+        sleep 60;
+    };
+};
+
 call startPhase1;
