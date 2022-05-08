@@ -2483,7 +2483,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="";
+							value="#adminLogged";
 						};
 					};
 				};
