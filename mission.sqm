@@ -397,7 +397,7 @@ class CustomAttributes
 										"STRING"
 									};
 								};
-								value="ace_spectator";
+								value="EndMission";
 							};
 						};
 						class Item1
@@ -411,7 +411,7 @@ class CustomAttributes
 										"STRING"
 									};
 								};
-								value="EndMission";
+								value="Spectator";
 							};
 						};
 					};
