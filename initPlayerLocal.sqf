@@ -81,6 +81,8 @@ player createDiaryRecord ["Diary", ["Mission", _mission]];
 player createDiaryRecord ["Diary", ["Situtation", _situation]];
 player createDiaryRecord ["Diary", ["Background", _background]];
 
+[] spawn { waitUntil { call selectBriefing } };
+
 if !(missionNamespace getVariable ["allPlayersReady", false]) then {
     [] spawn {
         waitUntil { getClientStateNumber > 9 };
@@ -181,6 +183,33 @@ adjustCamo = {
       sleep 3;
     };
   };
+};
+
+selectBriefing = {
+  private _idd = switch (true) do {
+    case (!isNull findDisplay 37):  {37};  // RscDisplayServerGetReady
+    case (!isNull findDisplay 53):  {53};  // RscDisplayClientGetReady
+    case (!isNull findDisplay 52):  {52};  // RscDisplayServerGetReady
+    case (!isNull findDisplay 312): {312}; // RscDisplayCurator
+    case (!isNull findDisplay 12):  {12}; // RscDisplayMainMap
+    default {nil};
+  };
+
+  if (isNil "_idd") exitWith {false};
+
+  private _display = findDisplay _idd;
+  private _subjects = _display displayCtrl 1001;
+  private _records = _display displayCtrl 1002;
+
+  for "_i" from 0 to (lbSize _subjects - 1) do {
+      if ((_subjects lbData _i) == "Diary") exitWith {
+        _subjects lnbSetCurSelRow _i;
+      };
+  };
+
+  _records lnbSetCurSelRow 0;
+
+  true
 };
 
 player call adjustCamo;
