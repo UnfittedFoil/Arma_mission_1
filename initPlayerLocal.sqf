@@ -75,8 +75,6 @@ _execution = "
 <br/>
 2. Return to base with the Liang.";
 
-systemChat "creating diary record";
-systemChat (str (player createDiaryRecord ["Diary", ["Execution", _execution]]));
 player createDiaryRecord ["Diary", ["Mission", _mission]];
 player createDiaryRecord ["Diary", ["Situtation", _situation]];
 player createDiaryRecord ["Diary", ["Background", _background]];
