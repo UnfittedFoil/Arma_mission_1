@@ -155,14 +155,11 @@ adjustCamo = {
 
   params ["_unit"];
   
-  //private _scriptHandle = _unit getVariable "holdScriptHandle";
-  //if (!isNil "_scriptHandle" && {!scriptDone _scriptHandle}) exitWith {};
   _scriptHandle = [_unit] spawn {
     params ["_unit"];
     _startCamo = player getUnitTrait "camouflageCoef";
     while {true} do {
       if (!alive _unit) exitWith {};
-      //_light = (getLightingAt player) select 3; 
   
       // At around 25.0, a person is nearly as visible as in 1,000 light. They can be identified as hostile pretty clearly
       _lighting = player getVariable["currentLighting" , nil];
