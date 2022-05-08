@@ -3972,6 +3972,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				init="[" \n "  this," \n "  [" \n "    ""Open Arsenal"", {" \n "      [_this select 3, _this select 1] call ace_arsenal_fnc_openBox" \n "    }, this, 10, false, true, """", ""true"", 10" \n "  ]" \n "] remoteExec [""addAction""];";
 			};
 			id=397;
 			type="O_supplyCrate_F";
