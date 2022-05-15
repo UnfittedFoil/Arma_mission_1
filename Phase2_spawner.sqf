@@ -27,7 +27,7 @@
 _spawnGroup = {
   params ["_side", "_spawnableSquadLeads", "_totalUnits", "_squadUnits", "_location", "_uniforms"];
   
-  _validPlayers =  allPlayers select { alive _x && {_x distance (getMarkerPos _marker) < 1500}};
+  _validPlayers =  allPlayers select { alive _x && {_x inArea Pyrgos_Area}};
   if (count _validPlayers == 0) exitWith {};
   _playerPosition = selectRandom _validPlayers;
 
